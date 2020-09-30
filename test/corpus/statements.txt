@@ -1,0 +1,9 @@
+==================
+Something
+==================
+
+aaa := 5
+
+---
+
+(source_file (assignment (identifier) (integer)))
