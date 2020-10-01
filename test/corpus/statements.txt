@@ -1,9 +1,28 @@
 ==================
-Something
+Module
 ==================
 
-aaa := 5
+Program prog;
+var a: integer;
+begin
+a := 5
+end.
 
 ---
 
-(source_file (assignment (identifier) (integer)))
+(module
+    (identifier)
+    (semicolon)
+    (mainblock
+        (declarations
+            (var_declarations
+                (identifier)
+                (colon)
+                (type)
+                (semicolon)))
+        (begin)
+            (assignment
+                (identifier)
+                (integer))
+        (end))
+    (dot))

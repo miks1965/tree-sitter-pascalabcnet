@@ -86,27 +86,57 @@
     }
   },
   {
-    "type": "source_file",
+    "type": "declarations",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "var_declarations",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mainblock",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "assignment",
           "named": true
         },
         {
-          "type": "binary_expression",
+          "type": "begin",
           "named": true
         },
         {
-          "type": "char",
+          "type": "declarations",
           "named": true
         },
         {
-          "type": "false",
+          "type": "end",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "module",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dot",
           "named": true
         },
         {
@@ -114,23 +144,20 @@
           "named": true
         },
         {
-          "type": "integer",
+          "type": "mainblock",
           "named": true
         },
         {
-          "type": "real",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
+          "type": "semicolon",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "unary_expression",
@@ -170,6 +197,33 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_declarations",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "colon",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "semicolon",
+          "named": true
+        },
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -256,6 +310,10 @@
     "named": false
   },
   {
+    "type": "Program",
+    "named": false
+  },
+  {
     "type": "^",
     "named": false
   },
@@ -264,7 +322,15 @@
     "named": false
   },
   {
+    "type": "begin",
+    "named": true
+  },
+  {
     "type": "boolean",
+    "named": false
+  },
+  {
+    "type": "char",
     "named": false
   },
   {
@@ -272,8 +338,16 @@
     "named": true
   },
   {
-    "type": "char",
-    "named": false
+    "type": "colon",
+    "named": true
+  },
+  {
+    "type": "dot",
+    "named": true
+  },
+  {
+    "type": "end",
+    "named": true
   },
   {
     "type": "false",
@@ -285,11 +359,11 @@
   },
   {
     "type": "integer",
-    "named": true
+    "named": false
   },
   {
     "type": "integer",
-    "named": false
+    "named": true
   },
   {
     "type": "or",
@@ -297,14 +371,22 @@
   },
   {
     "type": "real",
-    "named": true
+    "named": false
   },
   {
     "type": "real",
-    "named": false
+    "named": true
+  },
+  {
+    "type": "semicolon",
+    "named": true
   },
   {
     "type": "true",
     "named": true
+  },
+  {
+    "type": "var",
+    "named": false
   }
 ]

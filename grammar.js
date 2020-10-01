@@ -16,42 +16,37 @@ module.exports = grammar({
     name: 'pascalabcnet',
 
     rules: {
-        source_file: $ => repeat(choice(
-            $._statement,
-            $._expression,
-        )),
-        // source_file: $ => module,
 
-        // word: $ => $.identifier,
+        module: $ => seq(
+            'Program',
+            $.identifier,
+            $.semicolon,
+            $.mainblock,
+            $.dot
+        ),
 
-        // module: $ => seq(
-        //     'Program',
-        //     $.identifier,
-        //     $.semicolon,
-        //     $.mainblock,
-        //     $.dot
-        // ),
+        mainblock: $ => seq(
+            $.declarations,
+            $.begin,
+            seq($._statement),
+            $.end
+        ),
 
-        // mainblock: $ => seq(
-        //     $.declarations,
-        //     $.begin,
-        //     seq($._statement),
-        //     $.end
-        // ),
+        declarations: $ => choice(
+            $.var_declarations,
+        ),
 
-        // _top_level_declaration: $ => choice(
+        var_declarations: $ => seq(
+            'var',
+            repeat(seq(
+                $.identifier,
+                $.colon,
+                $.type,
+                $.semicolon)
+            )
+        ),
 
-        // ),
-
-        // declarations: $ => choice(
-
-        // ),
-
-        // _definition: $ => choice(
-
-        // ),
-
-        _type: $ => choice(
+        type: $ => choice(
             'boolean',
             'integer',
             'real',
@@ -112,6 +107,7 @@ module.exports = grammar({
         real: $ => /\d+,d+/,
         char: $ => /[^'\n]/,
         semicolon: $ => ';',
+        colon: $ => ':',
         dot: $ => '.',
 
         true: $ => 'true',
