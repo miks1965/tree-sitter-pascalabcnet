@@ -16,7 +16,6 @@ module.exports = grammar({
     name: 'pascalabcnet',
 
     rules: {
-
         module: $ => seq(
             'Program',
             $.identifier,
@@ -34,6 +33,8 @@ module.exports = grammar({
 
         declarations: $ => choice(
             $.var_declarations,
+            // $.const_declarations,
+            // $.procedure_declatarions,
         ),
 
         var_declarations: $ => seq(
@@ -46,6 +47,16 @@ module.exports = grammar({
             )
         ),
 
+        // const_declarations: $ => seq(
+        //     'const',
+        //     repeat(seq(
+        //         $.identifier,
+        //         '=',
+        //         $.const_expression,
+        //         $.semicolon
+        //     ))
+        // ),
+
         type: $ => choice(
             'boolean',
             'integer',
@@ -55,13 +66,69 @@ module.exports = grammar({
 
         _statement: $ => choice(
             $.assignment,
-            // $.if,
+            $.if_statement,
+            $.while_statement,
+            $.for_statement,
+            $.block_statement,
+            // $.empty_statement,
+            $.procedure_call_statement,
+        ),
+
+        if_statement: $ => choice(
+            seq('if',
+                $._expression,
+                'then',
+                $._statement,
+                'else',
+                $._statement),
+        ),
+
+        while_statement: $ => seq(
+            'while',
+            $._expression,
+            'do',
+            $._statement
         ),
 
         assignment: $ => seq(
             $.identifier,
             choice(...assignment_operators),
             $._expression,
+        ),
+
+        for_statement: $ => seq(
+            'for',
+            $.identifier,
+            ':=',
+            $._expression,
+            'to',
+            $._expression,
+            'step',
+            $._expression,
+            'do',
+            $._statement
+        ),
+
+        // empty_statement: $ => "",
+
+        block_statement: $ => seq(
+            $.begin,
+            repeat($._statement),
+            $.end
+        ),
+
+        procedure_call_statement: $ => seq(
+            $.identifier,
+            $.left_paren,
+            $.fact_params,
+            $.right_paren
+        ),
+
+        fact_params: $ => choice(
+            $._expression,
+            seq($._expression,
+                $.comma,
+                $.fact_params)
         ),
 
         _expression: $ => choice(
@@ -72,6 +139,7 @@ module.exports = grammar({
             $.false,
             $.unary_expression,
             $.binary_expression,
+            // $.const_expression
         ),
 
         unary_expression: $ => prec(PREC.unary, seq(
@@ -97,6 +165,8 @@ module.exports = grammar({
             ));
         },
 
+        // const_expression: $ => $._expression,
+
         _number: $ => choice(
             $.integer,
             $.real,
@@ -109,6 +179,9 @@ module.exports = grammar({
         semicolon: $ => ';',
         colon: $ => ':',
         dot: $ => '.',
+        comma: $ => ',',
+        left_paren: $ => '(',
+        right_paren: $ => ')',
 
         true: $ => 'true',
         false: $ => 'false',

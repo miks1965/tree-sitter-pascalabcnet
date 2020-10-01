@@ -26,3 +26,76 @@ end.
                 (integer))
         (end))
     (dot))
+
+==================
+While statement
+==================
+Program prog;
+var a: integer;
+begin
+    while true do
+    begin
+        a := 0
+    end
+end.
+
+---
+
+(module
+    (identifier)
+    (semicolon)
+    (mainblock
+        (declarations
+            (var_declarations
+                (identifier)
+                (colon)
+                (type)
+                (semicolon)))
+            (begin)
+            (while_statement
+                (true)
+                (block_statement
+                    (begin)
+                    (assignment
+                        (identifier)
+                        (integer))
+                (end)))
+    (end))
+(dot))
+
+==================
+For statement
+==================
+Program prog;
+var a: integer;
+begin
+    for x := 0 to 1 step 1 do
+    begin
+        a := 0
+    end
+end.
+
+---
+
+(module
+    (identifier)
+    (semicolon)
+    (mainblock
+        (declarations
+            (var_declarations
+                (identifier)
+                (colon)
+                (type)
+                (semicolon)))
+            (begin)
+            (for_statement
+                (identifier)
+                (integer) (integer) (integer)
+                (block_statement
+                    (begin)
+                    (assignment
+                        (identifier)
+                        (integer))
+                (end)))
+    (end))
+(dot))
