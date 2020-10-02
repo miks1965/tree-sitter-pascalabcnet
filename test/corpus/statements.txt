@@ -21,9 +21,9 @@ end.
                 (type)
                 (semicolon)))
         (begin)
-            (assignment
-                (identifier)
-                (integer))
+            (statement_sequence
+                (assignment
+                    (identifier) (integer)))
         (end))
     (dot))
 
@@ -98,4 +98,31 @@ end.
                         (integer))
                 (end)))
     (end))
+(dot))
+
+==================
+Procedure call statement
+==================
+Program prog;
+var a: integer;
+begin
+proc(a)
+end.
+
+---
+
+(module
+    (identifier)
+    (semicolon)
+    (mainblock
+        (declarations
+            (var_declarations
+                (identifier) (colon) (type) (semicolon)))
+            (begin)
+            (procedure_call_statement
+                (identifier)
+                (left_paren)
+                (fact_params (identifier))
+                (right_paren))
+            (end))
 (dot))
