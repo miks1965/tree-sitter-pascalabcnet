@@ -142,13 +142,14 @@ module.exports = grammar({
             $._expression,
         ),
 
-        if_statement: $ => choice(
-            seq('if',
-                $._expression,
-                'then',
-                $._statement,
+        if_statement: $ => prec.right(seq(
+            'if',
+            $._expression,
+            'then',
+            $._statement,
+            optional(seq(
                 'else',
-                $._statement),
+                $._statement)))
         ),
 
         while_statement: $ => seq(
@@ -171,7 +172,7 @@ module.exports = grammar({
             $._statement
         ),
 
-        // empty_statement: $ => "",
+        empty_statement: $ => '',
 
         block_statement: $ => seq(
             $.begin,

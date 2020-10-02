@@ -126,3 +126,38 @@ end.
                 (right_paren))
             (end))
 (dot))
+
+==================
+Long if statement
+==================
+
+Program prog;
+var a: integer;
+
+begin
+if true
+then true
+else false
+end.
+
+---
+
+(ERROR
+    (identifier)
+    (semicolon)
+    (declarations
+        (declarations)
+            (declarations_sequence
+                (var_declarations
+                    (var)
+                    (var_declaration
+                        (identifier)
+                        (colon)
+                        (type)
+                        (semicolon)))))
+    (begin)
+    (true)
+    (identifier)
+    (false)
+    (end)
+(dot))
