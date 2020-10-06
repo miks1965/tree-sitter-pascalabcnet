@@ -1,0 +1,172 @@
+==================
+Var declaration
+==================
+
+Program prog;
+var a: integer;
+begin
+end.
+
+---
+
+(module
+  (identifier)
+  (semicolon)
+  (mainblock
+    (declarations_sequence
+      (var_declarations
+        (var)
+        (var_declaration
+          (identifier)
+          (colon)
+          (type)
+          (semicolon))))
+    (begin)
+    (end))
+  (dot))
+
+==================
+Const declaration
+==================
+
+Program prog;
+const a = 5;
+begin
+end.
+
+---
+
+(module
+  (identifier)
+  (semicolon)
+  (mainblock
+    (declarations_sequence
+      (const_declarations
+        (const_declaration
+          (identifier)
+          (const_expression
+            (integer))
+          (semicolon))))
+    (begin)
+    (end))
+  (dot))
+
+==================
+Procedure declaration
+==================
+
+Program prog;
+procedure Increment(a: integer): integer;
+begin
+end;
+
+begin
+end.
+
+---
+
+(module
+  (identifier)
+  (semicolon)
+  (mainblock
+    (declarations_sequence
+      (procedure_declatarions
+        (identifier)
+        (formal_params
+          (left_paren)
+          (formal_params_list
+            (formal_params_sequence
+              (identifier_list
+                (identifier))
+              (colon)
+              (type)))
+          (right_paren))
+        (return
+          (colon)
+          (type))
+        (semicolon)
+        (mainblock
+          (begin)
+          (end))
+        (semicolon)))
+    (begin)
+    (end))
+  (dot))
+
+==================
+Many declarations
+==================
+
+Program prog;
+const a = 5; a = 7;
+var a: integer; b: integer;
+procedure Increment(a: integer): integer;
+begin
+end;
+var b: char;
+
+begin
+end.
+
+---
+
+(module
+  (identifier)
+  (semicolon)
+  (mainblock
+    (declarations_sequence
+      (const_declarations
+        (const_declaration
+          (identifier)
+          (const_expression
+            (integer))
+          (semicolon))
+        (const_declaration
+          (identifier)
+          (const_expression
+            (integer))
+          (semicolon))))
+    (declarations_sequence
+      (var_declarations
+        (var)
+        (var_declaration
+          (identifier)
+          (colon)
+          (type)
+          (semicolon))
+        (var_declaration
+          (identifier)
+          (colon)
+          (type)
+          (semicolon))))
+    (declarations_sequence
+      (procedure_declatarions
+        (identifier)
+        (formal_params
+          (left_paren)
+          (formal_params_list
+            (formal_params_sequence
+              (identifier_list
+                (identifier))
+              (colon)
+              (type)))
+          (right_paren))
+        (return
+          (colon)
+          (type))
+        (semicolon)
+        (mainblock
+          (begin)
+          (end))
+        (semicolon)))
+    (declarations_sequence
+      (var_declarations
+        (var)
+        (var_declaration
+          (identifier)
+          (colon)
+          (type)
+          (semicolon))))
+    (begin)
+    (end))
+  (dot))

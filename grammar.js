@@ -66,33 +66,30 @@ module.exports = grammar({
         procedure_declatarions: $ => seq(
             'procedure',
             $.identifier,
-            $.formal_params,
-            choice('', $.return),
+            optional($.formal_params),
+            optional($.return),
             $.semicolon,
             $.mainblock,
-            $.identifier,
             $.semicolon
         ),
 
-        formal_params: $ => choice(
-            seq($.left_paren,
-                $.right_paren),
-            seq($.left_paren,
-                $.formal_params_list,
-                $.right_paren)
+        formal_params: $ => seq(
+            $.left_paren,
+            optional($.formal_params_list),
+            $.right_paren,
         ),
 
-        return: $ => seq($.comma, $.type),
+        return: $ => seq($.colon, $.type),
 
-        formal_params_list: $ => choice(
-            $.formal_params_sequence,
-            seq($.formal_params_list,
-                $.semicolon,
-                $.formal_params_sequence)
+        formal_params_list: $ => seq(
+            optional(seq(
+                $.formal_params_list,
+                $.semicolon)),
+            $.formal_params_sequence
         ),
 
         formal_params_sequence: $ => seq(
-            choice('', $.var),
+            optional($.var),
             $.identifier_list,
             $.colon,
             $.type

@@ -662,7 +662,7 @@
       "required": true,
       "types": [
         {
-          "type": "comma",
+          "type": "colon",
           "named": true
         },
         {
@@ -891,10 +891,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "",
-    "named": false
   },
   {
     "type": "!",
