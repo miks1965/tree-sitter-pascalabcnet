@@ -158,10 +158,6 @@
         {
           "type": "const_declaration",
           "named": true
-        },
-        {
-          "type": "const_declarations",
-          "named": true
         }
       ]
     }
@@ -212,25 +208,6 @@
         },
         {
           "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "declarations",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "declarations",
-          "named": true
-        },
-        {
-          "type": "declarations_sequence",
           "named": true
         }
       ]
@@ -577,7 +554,7 @@
           "named": true
         },
         {
-          "type": "declarations",
+          "type": "declarations_sequence",
           "named": true
         },
         {
@@ -835,10 +812,6 @@
         },
         {
           "type": "var_declaration",
-          "named": true
-        },
-        {
-          "type": "var_declarations",
           "named": true
         }
       ]

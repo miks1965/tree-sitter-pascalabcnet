@@ -25,16 +25,10 @@ module.exports = grammar({
         ),
 
         mainblock: $ => seq(
-            $.declarations,
+            optional(repeat($.declarations_sequence)),
             $.begin,
-            $.statement_sequence,
+            optional($.statement_sequence),
             $.end
-        ),
-
-        declarations: $ => choice(
-            '',
-            seq($.declarations,
-                $.declarations_sequence)
         ),
 
         declarations_sequence: $ => choice(
@@ -45,11 +39,7 @@ module.exports = grammar({
 
         var_declarations: $ => seq(
             $.var,
-            choice(
-                $.var_declaration,
-                seq($.var_declarations,
-                    $.var_declaration)
-            )
+            repeat1($.var_declaration)
         ),
 
         var_declaration: $ => seq(
@@ -61,11 +51,7 @@ module.exports = grammar({
 
         const_declarations: $ => seq(
             'const',
-            choice(
-                $.const_declaration,
-                seq($.const_declarations,
-                    $.const_declaration)
-            )
+            repeat1($.const_declaration)
         ),
 
         const_declaration: $ => seq(
@@ -132,7 +118,6 @@ module.exports = grammar({
             $.while_statement,
             $.for_statement,
             $.block_statement,
-            // $.empty_statement,
             $.procedure_call_statement,
         ),
 
@@ -176,7 +161,7 @@ module.exports = grammar({
 
         block_statement: $ => seq(
             $.begin,
-            $.statement_sequence,
+            optional($.statement_sequence),
             $.end
         ),
 
@@ -211,7 +196,6 @@ module.exports = grammar({
             seq($.left_paren, $._expression, $.right_paren),
             $.unary_expression,
             $.binary_expression,
-            // $.const_expression
         ),
 
         unary_expression: $ => prec(PREC.unary, seq(
@@ -227,7 +211,6 @@ module.exports = grammar({
                 [PREC.and, 'and'],
                 [PREC.or, 'or'],
             ];
-
             return choice(...table.map(([precedence, operator]) =>
                 prec.left(precedence, seq(
                     $._expression,
@@ -236,8 +219,6 @@ module.exports = grammar({
                 ))
             ));
         },
-
-        // const_expression: $ => $._expression,
 
         _number: $ => choice(
             $.integer,

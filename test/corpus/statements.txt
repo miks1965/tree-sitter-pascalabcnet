@@ -161,3 +161,79 @@ end.
     (false)
     (end)
 (dot))
+
+==================
+Many declarations
+==================
+
+Program prog;
+const a = 5;
+var a: integer; b: integer;
+var b: char;
+begin
+a := 2;
+if a = 2 then
+begin
+  a := 4
+end else
+begin
+end
+end.
+
+---
+
+(module [0, 0] - [12, 4]
+  (identifier [0, 8] - [0, 12])
+  (semicolon [0, 12] - [0, 13])
+  (mainblock [1, 0] - [12, 3]
+    (declarations_sequence [1, 0] - [1, 12]
+      (const_declarations [1, 0] - [1, 12]
+        (const_declaration [1, 6] - [1, 12]
+          (identifier [1, 6] - [1, 7])
+          (const_expression [1, 9] - [1, 11]
+            (integer [1, 9] - [1, 11]))
+          (semicolon [1, 11] - [1, 12]))))
+    (declarations_sequence [2, 0] - [2, 27]
+      (var_declarations [2, 0] - [2, 27]
+        (var [2, 0] - [2, 3])
+        (var_declaration [2, 4] - [2, 15]
+          (identifier [2, 4] - [2, 5])
+          (colon [2, 5] - [2, 6])
+          (type [2, 7] - [2, 14])
+          (semicolon [2, 14] - [2, 15]))
+        (var_declaration [2, 16] - [2, 27]
+          (identifier [2, 16] - [2, 17])
+          (colon [2, 17] - [2, 18])
+          (type [2, 19] - [2, 26])
+          (semicolon [2, 26] - [2, 27]))))
+    (declarations_sequence [3, 0] - [3, 12]
+      (var_declarations [3, 0] - [3, 12]
+        (var [3, 0] - [3, 3])
+        (var_declaration [3, 4] - [3, 12]
+          (identifier [3, 4] - [3, 5])
+          (colon [3, 5] - [3, 6])
+          (type [3, 7] - [3, 11])
+          (semicolon [3, 11] - [3, 12]))))
+    (begin [4, 0] - [4, 5])
+    (statement_sequence [5, 0] - [11, 3]
+      (statement_sequence [5, 0] - [5, 6]
+        (assignment [5, 0] - [5, 6]
+          (identifier [5, 0] - [5, 1])
+          (integer [5, 4] - [5, 6])))
+      (semicolon [5, 6] - [5, 7])
+      (if_statement [6, 0] - [11, 3]
+        (binary_expression [6, 2] - [6, 8]
+          (identifier [6, 2] - [6, 4])
+          (integer [6, 6] - [6, 8]))
+        (block_statement [7, 0] - [9, 3]
+          (begin [7, 0] - [7, 5])
+          (statement_sequence [8, 2] - [8, 8]
+            (assignment [8, 2] - [8, 8]
+              (identifier [8, 2] - [8, 3])
+              (integer [8, 6] - [8, 8])))
+          (end [9, 0] - [9, 3]))
+        (block_statement [10, 0] - [11, 3]
+          (begin [10, 0] - [10, 5])
+          (end [11, 0] - [11, 3]))))
+    (end [12, 0] - [12, 3]))
+  (dot [12, 3] - [12, 4]))
