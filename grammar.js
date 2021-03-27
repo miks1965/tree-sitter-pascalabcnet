@@ -20,8 +20,8 @@ module.exports = grammar({
             $.program_file,
             $.unit_file,
             // $.parts,
-            seq($.tkShortProgram, $.stmt_list),
-            seq($.tkShortSFProgram, $.stmt_list)
+            seq($.tkShortProgram, $._stmt_list),
+            seq($.tkShortSFProgram, $._stmt_list)
         ),
 
         // parts: $ => choice(
@@ -43,7 +43,7 @@ module.exports = grammar({
         ),
 
         one_compiler_directive: $ => choice(
-            seq($.tkDirectiveName, $.tkIdentifier),
+            seq($.tkDirectiveName, $._tkIdentifier),
             seq($.tkDirectiveName, $.tkStringLiteral)
         ),
 
@@ -65,7 +65,7 @@ module.exports = grammar({
 
         program_header: $ => seq( //
             $.tkPoint,
-            $.identifier,
+            $._identifier,
             choice(
                 $.tkSemiColon,
                 seq($.tkRoundOpen,
@@ -80,12 +80,12 @@ module.exports = grammar({
                 $.program_param_list,
                 $.tkComma
             )),
-            $.identifier
+            $._identifier
         )),
 
-        program_block: $ => seq( //
+        program_block: $ => seq(
             optional($.decl_sect_list),
-            $.compound_stmt
+            $._compound_stmt
         ),
 
         ident_or_keyword_pointseparator_list: $ => prec.right(seq(
@@ -151,7 +151,7 @@ module.exports = grammar({
             $.tkLibrary
         ),
 
-        unit_name: $ => $.identifier,
+        unit_name: $ => $._identifier,
 
         interface_part: $ => choice(
             seq(
@@ -182,27 +182,27 @@ module.exports = grammar({
             $.tkEnd,
             seq(
                 $.tkInitialization,
-                $.stmt_list,
+                $._stmt_list,
                 optional(seq(
                     $.tkFinalization,
-                    $.stmt_list
+                    $._stmt_list
                 )),
                 $.tkEnd
             ),
             seq(
                 $.tkBegin,
-                $.stmt_list,
+                $._stmt_list,
                 $.tkEnd
             )
         ),
 
-        interface_decl_sect_list: $ => repeat1(choice(
+        interface_decl_sect_list: $ => repeat1(prec.right(choice(
             $.const_decl_sect,
             $.res_str_decl_sect,
             $.type_decl_sect,
             $.var_decl_sect,
             $.int_proc_func_header,
-        )),
+        ))),
 
         decl_sect_list: $ => repeat1(prec.right(choice(
             $.label_decl_sect,
@@ -213,13 +213,13 @@ module.exports = grammar({
             $.proc_func_constr_destr_decl_with_attr
         ))),
 
-        inclass_decl_sect_list: $ => repeat1(choice(
+        inclass_decl_sect_list: $ => repeat1(prec.right(choice(
             $.label_decl_sect,
             $.const_decl_sect,
             $.res_str_decl_sect,
             $.type_decl_sect,
             $.var_decl_sect
-        )),
+        ))),
 
         proc_func_constr_destr_decl_with_attr: $ => seq(
             repeat($.attribute_declaration),
@@ -256,7 +256,7 @@ module.exports = grammar({
 
         label_name: $ => choice(
             $.tkInteger,
-            $.tkIdentifier
+            $._tkIdentifier
         ),
 
         const_decl_sect: $ => prec.right(seq(
@@ -286,7 +286,7 @@ module.exports = grammar({
             $.var_decl,
             seq(
                 $.tkRoundOpen,
-                $.identifier,
+                $._identifier,
                 $.tkComma,
                 $.ident_list,
                 $.tkRoundClose,
@@ -306,7 +306,7 @@ module.exports = grammar({
         )),
 
         const_decl: $ => seq(
-            $.identifier,
+            $._identifier,
             choice(
                 seq(
                     $.tkEqual,
@@ -336,7 +336,7 @@ module.exports = grammar({
             seq(
                 $.const_simple_expr,
                 optional(seq(
-                    $.const_relop,
+                    $.const_сompare_op,
                     $.const_simple_expr
                 ))
             ),
@@ -351,7 +351,7 @@ module.exports = grammar({
             $.const_expr
         )),
 
-        const_relop: $ => choice(
+        const_сompare_op: $ => choice(
             $.tkEqual,
             $.tkNotEqual,
             $.tkLower,
@@ -457,10 +457,10 @@ module.exports = grammar({
         ),
 
         const_variable: $ => prec.right(choice(
-            $.identifier,
+            $._identifier,
             $.literal,
             $.unsigned_number,
-            seq($.tkInherited, $.identifier),
+            seq($.tkInherited, $._identifier),
             $.sizeof_expr,
             $.typeof_expr,
             seq($.const_variable, $.tkAmpersend, $.template_type_params),
@@ -491,17 +491,17 @@ module.exports = grammar({
             $.const_expr
         ),
 
-        unsigned_number: $ => choice(
+        unsigned_number: $ => prec(1, choice(
             $.tkInteger,
             $.tkHex,
             $.tkFloat
-        ),
+        )),
 
-        typed_const: $ => choice(
+        typed_const: $ => prec(1, choice(
             $.const_expr,
             $.array_const,
             $.record_const
-        ),
+        )),
 
         array_const: $ => seq(
             $.tkRoundOpen,
@@ -522,16 +522,7 @@ module.exports = grammar({
             $.tkRoundClose
         ),
 
-        const_field_list: $ => seq(
-            optional(seq(
-                $.const_field_list_1,
-                $.tkSemiColon
-            )),
-            $.const_field,
-            optional($.tkSemiColon)
-        ),
-
-        const_field_list: $ => seq(
+        const_field_list: $ => prec.right(seq(
             choice(
                 $.const_field,
                 seq($.const_field_list,
@@ -539,10 +530,10 @@ module.exports = grammar({
                     $.const_field)
             ),
             optional($.tkSemiColon)
-        ),
+        )),
 
         const_field: $ => seq(
-            $.identifier,
+            $._identifier,
             $.tkColon,
             $.typed_const
         ),
@@ -568,7 +559,7 @@ module.exports = grammar({
 
         one_attribute: $ => seq(
             optional(seq(
-                $.identifier,
+                $._identifier,
                 $.tkColon
             )),
             seq(
@@ -589,12 +580,12 @@ module.exports = grammar({
         ),
 
         type_decl_identifier: $ => seq(
-            $.identifier,
+            $._identifier,
             optional($.template_arguments)
         ),
 
         template_identifier_with_equal: $ => seq(
-            $.identifier,
+            $._identifier,
             $.tkLower,
             $.ident_list,
             $.tkGreaterEqual
@@ -687,7 +678,7 @@ module.exports = grammar({
         )),
 
         simple_type_identifier: $ => prec.right(choice(
-            $.identifier,
+            $._identifier,
             seq(
                 $.simple_type_identifier,
                 $.tkPoint,
@@ -768,7 +759,7 @@ module.exports = grammar({
         ),
 
         string_type: $ => seq(
-            $.tkIdentifier,
+            $._tkIdentifier,
             $.tkSquareOpen,
             $.const_expr,
             $.tkSquareClose
@@ -861,7 +852,7 @@ module.exports = grammar({
             $.tkStatic,
         ),
 
-        class_or_interface_keyword: $ => choice(
+        class_or_interface_keyword: $ => prec.right(choice(
             $.tkClass,
             $.tkInterface,
             seq($.tkTemplate,
@@ -870,7 +861,7 @@ module.exports = grammar({
                     $.tkRecord,
                     $.tkInterface,
                 )))
-        ),
+        )),
 
         optional_component_list_seq_end: $ => seq(
             $.member_list_section,
@@ -958,7 +949,7 @@ module.exports = grammar({
                 $.ident_list,
                 $.tkComma,
             )),
-            $.identifier,
+            $._identifier,
         ),
 
         field_or_const_definition_list: $ => prec.right(seq(
@@ -1021,14 +1012,14 @@ module.exports = grammar({
             ),
         ),
 
-        method_header: $ => choice(
+        method_header: $ => prec.left(choice(
             seq(
                 $.class_or_static,
                 $.proc_func_header,
             ),
             $.proc_func_header,
             $.constr_destr_header,
-        ),
+        )),
 
         proc_func_header: $ => choice(
             $.proc_header,
@@ -1050,13 +1041,13 @@ module.exports = grammar({
         )),
 
         qualified_identifier: $ => choice(
-            $.identifier,
+            $._identifier,
             $.visibility_specifier,
             seq(
                 $.qualified_identifier,
                 $.tkPoint,
                 choice(
-                    $.identifier,
+                    $._identifier,
                     $.visibility_specifier,
                 )
             ),
@@ -1133,24 +1124,30 @@ module.exports = grammar({
         property_specifiers: $ => choice(
             seq(
                 $.tkRead,
-                optional($.expr_with_func_decl_lambda),
+                optional(choice(
+                    $.expr,
+                    $.func_decl_lambda,
+                )),
                 optional($.write_property_specifiers),
             ),
             seq(
                 $.tkWrite,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
                 optional($.read_property_specifiers),
             ),
         ),
 
         write_property_specifiers: $ => seq(
             $.tkWrite,
-            optional($.unlabelled_stmt),
+            optional($._unlabelled_stmt),
         ),
 
         read_property_specifiers: $ => seq(
             $.tkRead,
-            optional($.expr_with_func_decl_lambda),
+            optional(choice(
+                $.expr,
+                $.func_decl_lambda,
+            )),
         ),
 
         var_decl: $ => seq(
@@ -1167,7 +1164,10 @@ module.exports = grammar({
                 ),
                 seq(
                     $.tkAssign,
-                    $.expr_with_func_decl_lambda,
+                    choice(
+                        $.expr,
+                        $.func_decl_lambda,
+                    ),
                 ),
                 seq(
                     $.tkColon,
@@ -1184,7 +1184,7 @@ module.exports = grammar({
             $.typed_const_plus,
             $.expl_func_decl_lambda,
             seq(
-                $.identifier,
+                $._identifier,
                 $.tkArrow,
                 $.lambda_function_body,
             ),
@@ -1220,7 +1220,7 @@ module.exports = grammar({
                 optional($.proc_name),
                 optional($.fp_list),
                 $.tkAssign,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
                 $.tkSemiColon,
             ),
         ),
@@ -1236,7 +1236,7 @@ module.exports = grammar({
                 optional($.proc_name),
                 optional($.fp_list),
                 $.tkAssign,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
                 $.tkSemiColon,
             ),
         ),
@@ -1286,7 +1286,7 @@ module.exports = grammar({
                 optional($.fp_list),
                 optional($.optional_method_modificators1),
                 $.tkAssign,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
                 $.tkSemiColon,
             ),
             seq(
@@ -1316,7 +1316,10 @@ module.exports = grammar({
                 )),
                 optional($.optional_method_modificators1),
                 $.tkAssign,
-                $.expr_l1_func_decl_lambda,
+                choice(
+                    $.expr_l1,
+                    $.func_decl_lambda,
+                ),
                 $.tkSemiColon,
             ),
             seq(
@@ -1325,7 +1328,7 @@ module.exports = grammar({
                 optional($.fp_list),
                 optional($.optional_method_modificators1),
                 $.tkAssign,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
                 $.tkSemiColon,
             ),
         ),
@@ -1357,7 +1360,7 @@ module.exports = grammar({
         ),
 
         func_name_with_template_args: $ => seq(
-            $.identifier,
+            $._identifier,
             optional($.template_arguments)
         ),
 
@@ -1393,20 +1396,20 @@ module.exports = grammar({
         ),
 
         external_directive_ident: $ => choice(
-            $.identifier,
+            $._identifier,
             $.literal,
         ),
 
         block: $ => seq(
             optional($.decl_sect_list),
-            $.compound_stmt,
+            $._compound_stmt,
             $.tkSemiColon,
         ),
 
         inclass_block: $ => choice(
             seq(
                 optional($.inclass_decl_sect_list),
-                $.compound_stmt,
+                $._compound_stmt,
                 $.tkSemiColon,
             ),
             $.external_block,
@@ -1458,7 +1461,7 @@ module.exports = grammar({
             optional(seq(
                 $.param_name_list,
                 $.tkComma)),
-            $.identifier
+            $._identifier
         )),
 
 
@@ -1471,7 +1474,7 @@ module.exports = grammar({
         ),
 
         stmt: $ => prec.right(choice(
-            $.unlabelled_stmt,
+            $._unlabelled_stmt,
             seq(
                 $.label_name,
                 $.tkColon,
@@ -1479,11 +1482,11 @@ module.exports = grammar({
             ),
         )),
 
-        unlabelled_stmt: $ => choice(
+        _unlabelled_stmt: $ => prec.left(choice(
             $.assignment,
             $.proc_call,
             $.goto_stmt,
-            $.compound_stmt,
+            $._compound_stmt,
             $.if_stmt,
             $.case_stmt,
             $.repeat_stmt,
@@ -1501,24 +1504,31 @@ module.exports = grammar({
             $.yield_sequence_stmt,
             $.loop_stmt,
             $.match_with,
-        ),
+        )),
 
         loop_stmt: $ => prec.left(seq(
             $.tkLoop,
             $.expr_l1,
             $.tkDo,
-            optional($.unlabelled_stmt),
+            optional($._unlabelled_stmt),
         )),
 
         yield_stmt: $ => seq(
             $.tkYield,
-            $.expr_l1_func_decl_lambda,
+            choice(
+                $.expr_l1,
+                $.func_decl_lambda,
+            ),
+
         ),
 
         yield_sequence_stmt: $ => seq(
             $.tkYield,
             $.tkSequence,
-            $.expr_l1_func_decl_lambda,
+            choice(
+                $.expr_l1,
+                $.func_decl_lambda,
+            ),
         ),
 
         var_stmt: $ => choice(
@@ -1530,12 +1540,12 @@ module.exports = grammar({
                 choice(
                     seq($.tkRoundOpen,
                         $.tkVar,
-                        $.identifier,
+                        $._identifier,
                         $.tkComma,
                         $.var_ident_list),
                     seq($.tkVar,
                         $.tkRoundOpen,
-                        $.identifier,
+                        $._identifier,
                         $.tkComma,
                         $.ident_list)),
                 $.tkRoundClose,
@@ -1546,9 +1556,12 @@ module.exports = grammar({
 
         assignment: $ => choice(
             seq(
-                $.var_reference,
+                $._var_reference,
                 $.assign_operator,
-                $.expr_with_func_decl_lambda,
+                choice(
+                    $.expr,
+                    $.func_decl_lambda,
+                ),
             ),
             seq(
                 $.tkRoundOpen,
@@ -1582,25 +1595,25 @@ module.exports = grammar({
                 $.var_ident_list,
                 $.tkComma)),
             $.tkVar,
-            $.identifier,
+            $._identifier,
         )),
 
-        proc_call: $ => $.var_reference,
+        proc_call: $ => $._var_reference,
 
         goto_stmt: $ => seq(
             $.tkGoto,
             $.label_name,
         ),
 
-        compound_stmt: $ => seq(
+        _compound_stmt: $ => seq(
             $.tkBegin,
-            $.stmt_list,
+            $._stmt_list,
             $.tkEnd,
         ),
 
-        stmt_list: $ => prec.right(seq(
+        _stmt_list: $ => prec.left(seq(
             optional(seq(
-                $.stmt_list,
+                $._stmt_list,
                 $.tkSemiColon)),
             $.stmt
         )),
@@ -1609,10 +1622,10 @@ module.exports = grammar({
             $.tkIf,
             $.expr_l1,
             $.tkThen,
-            optional($.unlabelled_stmt),
+            optional($._unlabelled_stmt),
             optional(seq(
                 $.tkElse,
-                optional($.unlabelled_stmt))
+                optional($._unlabelled_stmt))
             ),
         )),
 
@@ -1640,29 +1653,29 @@ module.exports = grammar({
                 $.tkWhen,
                 $.expr_l1,
                 $.tkColon,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
             ),
             seq(
                 $.deconstruction_or_const_pattern,
                 $.tkColon,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
             ),
             seq(
                 $.collection_pattern,
                 $.tkColon,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
             ),
             seq(
                 $.tuple_pattern,
                 $.tkWhen,
                 $.expr_l1,
                 $.tkColon,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
             ),
             seq(
                 $.tuple_pattern,
                 $.tkColon,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
             ),
         ),
 
@@ -1704,7 +1717,7 @@ module.exports = grammar({
         case_item: $ => seq(
             $.case_label_list,
             $.tkColon,
-            optional($.unlabelled_stmt),
+            optional($._unlabelled_stmt),
         ),
 
         case_label_list: $ => prec.right(choice(
@@ -1720,12 +1733,12 @@ module.exports = grammar({
 
         else_case: $ => seq(
             $.tkElse,
-            $.stmt_list,
+            $._stmt_list,
         ),
 
         repeat_stmt: $ => seq(
             $.tkRepeat,
-            $.stmt_list,
+            $._stmt_list,
             $.tkUntil,
             $.expr,
         ),
@@ -1734,20 +1747,20 @@ module.exports = grammar({
             $.tkWhile,
             $.expr_l1,
             optional($.tkDo),
-            optional($.unlabelled_stmt),
+            optional($._unlabelled_stmt),
         )),
 
-        lock_stmt: $ => seq(
+        lock_stmt: $ => prec.right(seq(
             $.tkLock,
             $.expr_l1,
             $.tkDo,
-            optional($.unlabelled_stmt),
-        ),
+            optional($._unlabelled_stmt),
+        )),
 
         foreach_stmt: $ => prec.right(choice(
             seq(
                 $.tkForeach,
-                $.identifier,
+                $._identifier,
                 optional(seq(
                     $.tkColon,
                     $.type_ref,
@@ -1755,25 +1768,25 @@ module.exports = grammar({
                 $.tkIn,
                 $.expr_l1,
                 $.tkDo,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
             ),
             seq(
                 $.tkForeach,
                 $.tkVar,
-                $.identifier,
+                $._identifier,
                 optional(seq($.tkColon,
                     $.type_ref)),
                 $.tkIn,
                 $.expr_l1,
                 $.tkDo,
-                optional($.unlabelled_stmt),
+                optional($._unlabelled_stmt),
             ),
         )),
 
         for_stmt: $ => prec.right(seq(
             $.tkFor,
             optional($.tkVar),
-            $.identifier,
+            $._identifier,
             $.for_stmt_decl_or_assign,
             $.expr_l1,
             choice(
@@ -1782,7 +1795,7 @@ module.exports = grammar({
             ),
             $.expr_l1,
             optional($.tkDo),
-            optional($.unlabelled_stmt),
+            optional($._unlabelled_stmt),
         )),
 
         for_stmt_decl_or_assign: $ => choice(
@@ -1794,23 +1807,23 @@ module.exports = grammar({
             ),
         ),
 
-        with_stmt: $ => seq(
+        with_stmt: $ => prec.right(seq(
             $.tkWith,
             $.expr_list,
             $.tkDo,
-            optional($.unlabelled_stmt),
-        ),
+            optional($._unlabelled_stmt),
+        )),
 
         try_stmt: $ => seq(
             $.tkTry,
-            $.stmt_list,
+            $._stmt_list,
             $.try_handler,
         ),
 
         try_handler: $ => choice(
             seq(
                 $.tkFinally,
-                $.stmt_list,
+                $._stmt_list,
                 $.tkEnd,
             ),
             seq(
@@ -1826,7 +1839,7 @@ module.exports = grammar({
                 optional($.tkSemiColon),
                 optional($.exception_block_else_branch),
             ),
-            $.stmt_list
+            $._stmt_list
         ),
 
         exception_handler_list: $ => prec.right(seq(
@@ -1839,43 +1852,41 @@ module.exports = grammar({
 
         exception_block_else_branch: $ => seq(
             $.tkElse,
-            $.stmt_list,
+            $._stmt_list,
         ),
 
         exception_handler: $ => seq(
             $.tkOn,
             $.exception_identifier,
             $.tkDo,
-            optional($.unlabelled_stmt),
+            optional($._unlabelled_stmt),
         ),
 
         exception_identifier: $ => seq(
             optional(seq(
-                $.identifier,
+                $._identifier,
                 $.tkColon
             )),
             $.simple_type_identifier,
         ),
 
-        raise_stmt: $ => seq(
+        raise_stmt: $ => prec.right(seq(
             $.tkRaise,
             optional($.expr),
-        ),
+        )),
 
         expr_list: $ => prec.right(seq(
             optional(seq(
                 $.expr_list,
                 $.tkComma,
             )),
-            $.expr_with_func_decl_lambda,
+            choice(
+                $.expr,
+                $.func_decl_lambda,
+            ),
         )),
 
         expr_as_stmt: $ => $.new_expr,
-
-        expr_with_func_decl_lambda: $ => choice(
-            $.expr,
-            $.func_decl_lambda,
-        ),
 
         expr: $ => choice(
             $.expr_l1,
@@ -1883,40 +1894,25 @@ module.exports = grammar({
         ),
 
         expr_l1: $ => choice(
-            $.expr_dq,
-            $.question_expr,
-            $.new_question_expr,
-        ),
-
-        expr_l1_for_question_expr: $ => choice(
-            $.expr_dq,
-            $.question_expr,
-        ),
-
-        expr_l1_for_new_question_expr: $ => choice(
-            $.expr_dq,
-            $.new_question_expr,
-        ),
-
-        expr_l1_func_decl_lambda: $ => choice(
-            $.expr_l1,
-            $.func_decl_lambda,
+            $.double_question_expr,
+            $.ternary_expr,
+            $.conditional_expr,
         ),
 
         expr_l1_for_lambda: $ => choice(
-            $.expr_dq,
-            $.question_expr,
+            $.double_question_expr,
+            $.ternary_expr,
             $.func_decl_lambda,
         ),
 
-        expr_dq: $ => choice(
-            $.relop_expr,
+        double_question_expr: $ => prec.right(choice(
+            $.сompare_expr,
             seq(
-                $.expr_dq,
+                $.double_question_expr,
                 $.tkDoubleQuestion,
-                $.relop_expr,
+                $.сompare_expr,
             ),
-        ),
+        )),
 
         sizeof_expr: $ => seq(
             $.tkSizeOf,
@@ -1936,21 +1932,39 @@ module.exports = grammar({
             ),
         ),
 
-        question_expr: $ => prec.right(seq(
-            $.expr_l1_for_question_expr,
+        ternary_expr: $ => prec.right(seq(
+            choice(
+                $.double_question_expr,
+                $.ternary_expr,
+            ),
             $.tkQuestion,
-            $.expr_l1_for_question_expr,
+            choice(
+                $.double_question_expr,
+                $.ternary_expr,
+            ),
             $.tkColon,
-            $.expr_l1_for_question_expr,
+            choice(
+                $.double_question_expr,
+                $.ternary_expr,
+            ),
         )),
 
-        new_question_expr: $ => prec.right(seq(
+        conditional_expr: $ => prec.right(seq(
             $.tkIf,
-            $.expr_l1_for_new_question_expr,
+            choice(
+                $.double_question_expr,
+                $.conditional_expr,
+            ),
             $.tkThen,
-            $.expr_l1_for_new_question_expr,
+            choice(
+                $.double_question_expr,
+                $.conditional_expr,
+            ),
             $.tkElse,
-            $.expr_l1_for_new_question_expr,
+            choice(
+                $.double_question_expr,
+                $.conditional_expr,
+            ),
         )),
 
         empty_template_type_reference: $ => seq(
@@ -2005,11 +2019,11 @@ module.exports = grammar({
 
         field_in_unnamed_object: $ => choice(
             seq(
-                $.identifier,
+                $._identifier,
                 $.tkAssign,
-                $.relop_expr,
+                $.сompare_expr,
             ),
-            $.relop_expr,
+            $.сompare_expr,
         ),
 
         // здесь я перестала переписывать рекурсивные определения
@@ -2028,17 +2042,17 @@ module.exports = grammar({
             $.tkRoundClose,
         ),
 
-        relop_expr: $ => choice(
+        сompare_expr: $ => prec.left(choice(
             $.simple_expr,
             seq(
-                $.relop_expr,
-                $.relop,
+                $.сompare_expr,
+                $.сompare_op,
                 $.simple_expr,
             ),
             seq(
-                $.relop_expr,
-                $.relop,
-                $.new_question_expr,
+                $.сompare_expr,
+                $.сompare_op,
+                $.conditional_expr,
             ),
             seq(
                 $.is_type_expr,
@@ -2046,7 +2060,7 @@ module.exports = grammar({
                 $.pattern_out_param_list,
                 $.tkRoundClose,
             ),
-        ),
+        )),
 
         pattern: $ => seq(
             $.simple_or_template_type_reference,
@@ -2118,7 +2132,7 @@ module.exports = grammar({
 
         collection_pattern_var_item: $ => seq(
             $.tkVar,
-            $.identifier,
+            $._identifier,
         ),
 
         tuple_pattern: $ => seq(
@@ -2141,7 +2155,7 @@ module.exports = grammar({
             ),
             seq(
                 $.tkVar,
-                $.identifier,
+                $._identifier,
             ),
             $.pattern_optional_var,
             $.collection_pattern,
@@ -2189,13 +2203,13 @@ module.exports = grammar({
             $.unsigned_number,
             seq(
                 $.tkVar,
-                $.identifier,
+                $._identifier,
                 $.tkColon,
                 $.type_ref,
             ),
             seq(
                 $.tkVar,
-                $.identifier,
+                $._identifier,
             ),
             $.pattern,
             $.collection_pattern,
@@ -2214,20 +2228,20 @@ module.exports = grammar({
                 $.sign,
                 $.unsigned_number),
             seq(
-                $.identifier,
+                $._identifier,
                 $.tkColon,
                 $.type_ref,
             ),
-            $.identifier,
+            $._identifier,
             seq(
                 $.tkVar,
-                $.identifier,
+                $._identifier,
                 $.tkColon,
                 $.type_ref,
             ),
             seq(
                 $.tkVar,
-                $.identifier,
+                $._identifier,
             ),
             $.pattern_optional_var,
             $.collection_pattern,
@@ -2288,7 +2302,7 @@ module.exports = grammar({
             ),
         ),
 
-        relop: $ => choice(
+        сompare_op: $ => choice(
             $.tkEqual,
             $.tkNotEqual,
             $.tkLower,
@@ -2298,7 +2312,7 @@ module.exports = grammar({
             $.tkIn,
         ),
 
-        simple_expr: $ => prec.left(choice(
+        simple_expr: $ => prec.right(choice(
             $.term1,
             seq(
                 $.simple_expr,
@@ -2317,7 +2331,7 @@ module.exports = grammar({
             seq(
                 $.term1,
                 $.addop,
-                $.new_question_expr,
+                $.conditional_expr,
             ),
         )),
 
@@ -2332,11 +2346,6 @@ module.exports = grammar({
         typecast_op: $ => choice(
             $.tkAs,
             $.tkIs,
-        ),
-
-        as_is_expr: $ => choice(
-            $.is_type_expr,
-            $.as_expr,
         ),
 
         as_expr: $ => seq(
@@ -2385,9 +2394,12 @@ module.exports = grammar({
             seq(
                 $.term,
                 $.mulop,
-                $.new_question_expr,
+                $.conditional_expr,
             ),
-            $.as_is_expr,
+            choice(
+                $.is_type_expr,
+                $.as_expr,
+            )
         )),
 
         mulop: $ => choice(
@@ -2420,7 +2432,7 @@ module.exports = grammar({
         factor_without_unary_op: $ => choice(
             $.literal,
             $.unsigned_number,
-            $.var_reference,
+            $._var_reference,
         ),
 
         factor: $ => prec(6, choice(
@@ -2445,7 +2457,7 @@ module.exports = grammar({
                 $.tkDeref,
                 $.factor,
             ),
-            $.var_reference,
+            $._var_reference,
             $.tuple,
         )),
 
@@ -2462,7 +2474,7 @@ module.exports = grammar({
             ),
         )),
 
-        var_reference: $ => prec.right(6, choice(
+        _var_reference: $ => prec.right(choice(
             seq(
                 $.var_address,
                 $.variable,
@@ -2480,7 +2492,7 @@ module.exports = grammar({
         ),
 
         dotted_identifier: $ => choice(
-            $.identifier,
+            $._identifier,
             seq(
                 $.dotted_identifier,
                 $.tkPoint,
@@ -2496,12 +2508,12 @@ module.exports = grammar({
             ),
         ),
 
-        variable: $ => prec.right(choice(
-            $.identifier,
+        variable: $ => prec.left(choice(
+            $._identifier,
             $.operator_name_ident,
             seq(
                 $.tkInherited,
-                $.identifier,
+                $._identifier,
             ),
             seq(
                 $.tkRoundOpen,
@@ -2582,15 +2594,13 @@ module.exports = grammar({
             ),
         ),
 
-        one_literal: $ => choice(
-            $.tkStringLiteral,
-            $.tkAsciiChar,
-        ),
-
-        literal: $ => choice(
-            repeat1($.one_literal),
+        literal: $ => prec.right(choice(
+            repeat1(choice(
+                $.tkStringLiteral,
+                $.tkAsciiChar,
+            )),
             $.tkFormatStringLiteral,
-        ),
+        )),
 
         operator_name_ident: $ => seq(
             $.tkOperator,
@@ -2620,20 +2630,20 @@ module.exports = grammar({
             ),
         ),
 
-        identifier: $ => prec(6, choice(
-            $.tkIdentifier,
+        _identifier: $ => prec(6, choice(
+            $._tkIdentifier,
             $.property_specifier_directives,
             $.non_reserved,
         )),
 
         identifier_or_keyword: $ => choice(
-            $.identifier,
+            $._identifier,
             $.keyword,
             $.reserved_keyword,
         ),
 
         identifier_keyword_operatorname: $ => choice(
-            $.identifier,
+            $._identifier,
             $.keyword,
             $.operator_name_ident,
         ),
@@ -2798,7 +2808,7 @@ module.exports = grammar({
 
         func_decl_lambda: $ => choice(
             seq(
-                $.identifier,
+                $._identifier,
                 $.tkArrow,
                 $.lambda_function_body,
             ),
@@ -2811,7 +2821,7 @@ module.exports = grammar({
             ),
             seq(
                 $.tkRoundOpen,
-                $.identifier,
+                $._identifier,
                 $.tkColon,
                 $.type_ref,
                 $.tkRoundClose,
@@ -2821,7 +2831,7 @@ module.exports = grammar({
             ),
             seq(
                 $.tkRoundOpen,
-                $.identifier,
+                $._identifier,
                 $.tkSemiColon,
                 $.full_lambda_fp_list,
                 $.tkRoundClose,
@@ -2831,7 +2841,7 @@ module.exports = grammar({
             ),
             seq(
                 $.tkRoundOpen,
-                $.identifier,
+                $._identifier,
                 $.tkColon,
                 $.type_ref,
                 $.tkSemiColon,
@@ -2935,7 +2945,7 @@ module.exports = grammar({
         ),
 
         common_lambda_body: $ => choice(
-            $.compound_stmt,
+            $._compound_stmt,
             $.if_stmt,
             $.while_stmt,
             $.repeat_stmt,
@@ -2999,19 +3009,19 @@ module.exports = grammar({
         tkArrow: $ => "→",
         tkShortProgram: $ => prec(5, /[#][#][ \t\r\n]+/),
         tkShortSFProgram: $ => prec(5, /[#][#][#][ \t\r\n]+/),
-        tkDirectiveName: $ => token.immediate(seq("#", $.letterDigit)),
-        tkIdentifier: $ => token.immediate(seq($.letter, token.immediate(repeat($.letterDigit)))),
+        tkDirectiveName: $ => /\#(\p{L}|\p{Nd})+/,
+        _tkIdentifier: $ => /\p{L}(\p{L}|\p{Nd})*/,
         tkStringLiteral: $ => /\'([^\'\n]|\'\')*\'/,
-        tkInteger: $ => repeat1($.digit),
-        tkHex: $ => repeat1($.hexDigit),
-        tkFloat: $ => seq($.tkInteger, ".", $.tkInteger),
-        tkAsciiChar: $ => seq("#", repeat1($.digit)),
+        tkInteger: $ => /(\p{Nd})+/,
+        tkHex: $ => /(\p{Nd}|[abcdefABCDEF])+/,
+        tkFloat: $ => /(\p{Nd})+\.(\p{Nd})+/,
+        tkAsciiChar: $ => /#(\p{Nd})+/,
         tkFormatStringLiteral: $ => /\$\'([^\'\n]|\'\')*\'/,
 
-        letter: $ => token.immediate(/\p{L}/),
-        digit: $ => token.immediate(/\p{Nd}/),
-        hexDigit: $ => token.immediate(repeat1(choice($.digit, /[abcdefABCDEF]/))),
-        letterDigit: $ => token.immediate(choice($.letter, $.digit)),
+        letter: $ => /\p{L}/,
+        digit: $ => /\p{Nd}/,
+        letterDigit: $ => /(\p{L}|\p{Nd})/,
+        hexDigit: $ => /(\p{Nd}|[abcdefABCDEF])+/,
 
         tkOr: $ => "or",
         tkXor: $ => "xor",
