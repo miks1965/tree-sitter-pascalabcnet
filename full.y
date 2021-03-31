@@ -657,7 +657,7 @@ sign
 const_variable
     : identifier
 
-    | literal // SSM 02.10.18 ��� '123'.Length ��� ������������� ��������
+    | literal
 
     | unsigned_number
 
@@ -1079,9 +1079,6 @@ object_type
 
 record_type
     : tkRecord optional_base_classes optional_where_section member_list_section tkEnd
-
-			$$ = nnrt;
-		}
     ;
 
 class_attribute
@@ -1447,7 +1444,7 @@ var_decl_part
 
     | ident_list tkAssign expr_with_func_decl_lambda
 
-    | ident_list tkColon type_ref tkAssignOrEqual typed_var_init_expression // typed_const_plus ��� ����� �� ��������� :) �� ���� �� ������ Tuples, ��������� ��� ����������� � ��������� ������� ���������������� ��������
+    | ident_list tkColon type_ref tkAssignOrEqual typed_var_init_expression
 
     ;
 
@@ -1969,7 +1966,6 @@ try_handler
 
     | tkExcept exception_block tkEnd
 
-		}
     ;
 
 exception_block
@@ -2109,8 +2105,7 @@ sizeof_expr
 typeof_expr
     : tkTypeOf tkRoundOpen simple_or_template_type_reference tkRoundClose
 
-    |
-      tkTypeOf tkRoundOpen empty_template_type_reference tkRoundClose
+    | tkTypeOf tkRoundOpen empty_template_type_reference tkRoundClose
 
     ;
 
@@ -2501,7 +2496,7 @@ default_expr
     ;
 
 tuple
-	 : tkRoundOpen expr_l1 tkComma expr_l1_list lambda_type_ref optional_full_lambda_fp_list tkRoundClose // lambda_type_ref optional_full_lambda_fp_list ����� �������� ����� �� ���� ���������� � ����������� �����
+	 : tkRoundOpen expr_l1 tkComma expr_l1_list lambda_type_ref optional_full_lambda_fp_list tkRoundClose
 
     ;
 
@@ -2663,9 +2658,6 @@ literal
 
     | tkFormatStringLiteral
 
-            else
-
-        }
 	;
 
 literal_list
@@ -3066,12 +3058,6 @@ expl_func_decl_lambda
 
 full_lambda_fp_list
 	: lambda_simple_fp_sect
-
-				$$.source_context = @$;
-			}
-			else
-
-		}
 	| full_lambda_fp_list tkSemiColon lambda_simple_fp_sect
 
 	;

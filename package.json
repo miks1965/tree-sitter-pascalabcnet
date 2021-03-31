@@ -2,7 +2,7 @@
   "name": "tree-sitter-pascalabcnet",
   "version": "0.1.0",
   "description": "PascalABC.NET grammar for tree-sitter",
-  "main": "index.js",
+  "main": "bindings/node",
   "keywords": [
     "parser",
     "lexer"
@@ -19,5 +19,13 @@
   "devDependencies": {
     "tree-sitter-cli": "^0.17.1"
   },
-  "repository": "https://github.com/Lereena/tree-sitter-pascalabcnet"
+  "repository": "https://github.com/Lereena/tree-sitter-pascalabcnet",
+  "tree-sitter": [
+    {
+      "scope": "source.pascalabcnet",
+      "file-types": [
+        "pas"
+      ]
+    }
+  ]
 }
