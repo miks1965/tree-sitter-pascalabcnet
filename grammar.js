@@ -3,7 +3,6 @@ module.exports = grammar({
 
     conflicts: $ => [
         [$.assignment, $.variable_or_literal_or_number],
-        // [$.variable],
         [$.format_expr],
         [$.relop_expr, $.simple_expr],
         [$.assignment, $.var_reference],
@@ -65,13 +64,13 @@ module.exports = grammar({
                 $.tkStringLiteral,
             ),
         ),
-        program_file: $ => seq(
+        program_file: $ => prec.right(seq(
             optional($.program_header),
             optional($.optional_head_compiler_directives),
             optional($.uses_clause),
             $.program_block,
             optional($.optional_tk_point),
-        ),
+        )),
 
         optional_tk_point: $ => choice(
             $.tkPoint,
@@ -877,15 +876,6 @@ module.exports = grammar({
             $.type_ref,
         ),
 
-        // simple_type_list: $ => choice(
-        //     optional($.simple_type_or_),
-        //     seq(
-        //         $.simple_type_list,
-        //         $.tkComma,
-        //         optional($.simple_type_or_),
-        //     ),
-        // ),
-
         simple_type_list: $ => seq(
             optional(seq(
                 $.simple_type_list,
@@ -1084,14 +1074,6 @@ module.exports = grammar({
             $.tkRecord,
             $.tkConstructor,
         ),
-        // member_list_section: $ => choice(
-        //     optional($.member_list),
-        //     seq(
-        //         $.member_list_section,
-        //         $.ot_visibility_specifier,
-        //         optional($.member_list),
-        //     ),
-        // ),
 
         member_list_section: $ => seq(
             optional(seq(
@@ -1872,15 +1854,6 @@ module.exports = grammar({
             optional($.stmt_list),
             $.tkEnd,
         ),
-
-        // stmt_list: $ => choice(
-        //     optional($.stmt),
-        //     seq(
-        //         $.stmt_list,
-        //         $.tkSemiColon,
-        //         optional($.stmt),
-        //     ),
-        // ),
 
         stmt_list: $ => seq(
             optional(seq(
