@@ -21,7 +21,8 @@ module.exports = grammar({
         [$.template_param, $.proc_type_decl],
         [$.write_property_specifiers, $.property_specifier_directives],
         [$.read_property_specifiers, $.property_specifier_directives],
-        [$.expr_l1_for_new_question_expr, $.expr_dq]
+        [$.expr_l1_for_new_question_expr, $.expr_dq],
+        [$.expr_with_func_decl_lambda, $.variable]
     ],
 
     rules: {
@@ -1855,13 +1856,13 @@ module.exports = grammar({
             $.tkEnd,
         ),
 
-        stmt_list: $ => seq(
-            optional(seq(
-                $.stmt_list,
-                $.tkSemiColon,
-            )),
+        stmt_list: $ => prec.right(seq(
             $.stmt,
-        ),
+            optional(seq(
+                $.tkSemiColon,
+                optional($.stmt_list),
+            )),
+        )),
 
         if_stmt: $ => prec.right(choice(
             seq(
@@ -2167,11 +2168,11 @@ module.exports = grammar({
         ),
         expr_as_stmt: $ => $.allowable_expr_as_stmt,
         allowable_expr_as_stmt: $ => $.new_expr,
-        expr_with_func_decl_lambda: $ => prec.right(choice(
+        expr_with_func_decl_lambda: $ => choice(
             $.expr,
             $.func_decl_lambda,
             $.tkInherited,
-        )),
+        ),
         expr: $ => choice(
             $.expr_l1,
             $.format_expr,
@@ -3279,7 +3280,6 @@ module.exports = grammar({
         tkDeref: $ => "^",
         tkArrow: $ => "->",
         tkBackSlashRoundOpen: $ => "\\[(]",
-        tkArrow: $ => "→",
         tkShortProgram: $ => prec(5, /[#][#][ \t\r\n]+/),
         tkShortSFProgram: $ => prec(5, /[#][#][#][ \t\r\n]+/),
         tkDirectiveName: $ => /\#(\p{L}|\p{Nd})+/,
