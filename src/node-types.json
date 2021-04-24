@@ -1,5 +1,259 @@
 [
   {
+    "type": "abc_decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "const_decl_sect",
+          "named": true
+        },
+        {
+          "type": "label_decl_sect",
+          "named": true
+        },
+        {
+          "type": "res_str_decl_sect",
+          "named": true
+        },
+        {
+          "type": "type_decl_sect",
+          "named": true
+        },
+        {
+          "type": "var_decl_sect",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "addop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkMinus",
+          "named": true
+        },
+        {
+          "type": "tkOr",
+          "named": true
+        },
+        {
+          "type": "tkPlus",
+          "named": true
+        },
+        {
+          "type": "tkXor",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "allowable_expr_as_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "new_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_const",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "typed_const_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_defaultproperty",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkDefault",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_type_list",
+          "named": true
+        },
+        {
+          "type": "tkArray",
+          "named": true
+        },
+        {
+          "type": "tkOf",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        },
+        {
+          "type": "unsized_array_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "as_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        },
+        {
+          "type": "tkAs",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "as_is_constexpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_term",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "typecast_op",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "as_is_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "as_expr",
+          "named": true
+        },
+        {
+          "type": "is_type_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "assign_operator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkDivEqual",
+          "named": true
+        },
+        {
+          "type": "tkMinusEqual",
+          "named": true
+        },
+        {
+          "type": "tkMultEqual",
+          "named": true
+        },
+        {
+          "type": "tkPlusEqual",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "assignment",
     "named": true,
     "fields": {},
@@ -8,50 +262,58 @@
       "required": true,
       "types": [
         {
-          "type": "binary_expression",
+          "type": "assign_operator",
           "named": true
         },
         {
-          "type": "char",
+          "type": "expr",
           "named": true
         },
         {
-          "type": "false",
+          "type": "expr_with_func_decl_lambda",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "format_expr",
           "named": true
         },
         {
-          "type": "integer",
+          "type": "tkComma",
           "named": true
         },
         {
-          "type": "left_paren",
+          "type": "tkQuestionSquareOpen",
           "named": true
         },
         {
-          "type": "real",
+          "type": "tkRoundClose",
           "named": true
         },
         {
-          "type": "right_paren",
+          "type": "tkRoundOpen",
           "named": true
         },
         {
-          "type": "true",
+          "type": "tkSquareClose",
           "named": true
         },
         {
-          "type": "unary_expression",
+          "type": "var_reference",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "variable_list",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "binary_expression",
+    "type": "attribute_declaration",
     "named": true,
     "fields": {},
     "children": {
@@ -59,50 +321,22 @@
       "required": true,
       "types": [
         {
-          "type": "binary_expression",
+          "type": "one_or_some_attribute",
           "named": true
         },
         {
-          "type": "char",
+          "type": "tkSquareClose",
           "named": true
         },
         {
-          "type": "false",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "left_paren",
-          "named": true
-        },
-        {
-          "type": "real",
-          "named": true
-        },
-        {
-          "type": "right_paren",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
+          "type": "tkSquareOpen",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "block_statement",
+    "type": "attribute_declarations",
     "named": true,
     "fields": {},
     "children": {
@@ -110,22 +344,18 @@
       "required": true,
       "types": [
         {
-          "type": "begin",
+          "type": "attribute_declaration",
           "named": true
         },
         {
-          "type": "end",
-          "named": true
-        },
-        {
-          "type": "statement_sequence",
+          "type": "attribute_declarations",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "const_declaration",
+    "type": "attribute_variable",
     "named": true,
     "fields": {},
     "children": {
@@ -133,88 +363,22 @@
       "required": true,
       "types": [
         {
-          "type": "const_expression",
+          "type": "optional_expr_list_with_bracket",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "simple_type_identifier",
           "named": true
         },
         {
-          "type": "semicolon",
+          "type": "template_type",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "const_declarations",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "const_declaration",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "const_expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "false",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "left_paren",
-          "named": true
-        },
-        {
-          "type": "real",
-          "named": true
-        },
-        {
-          "type": "right_paren",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "declarations_sequence",
+    "type": "base_class_name",
     "named": true,
     "fields": {},
     "children": {
@@ -222,22 +386,18 @@
       "required": true,
       "types": [
         {
-          "type": "const_declarations",
+          "type": "simple_type_identifier",
           "named": true
         },
         {
-          "type": "procedure_declatarions",
-          "named": true
-        },
-        {
-          "type": "var_declarations",
+          "type": "template_type",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "fact_params",
+    "type": "base_classes_names_list",
     "named": true,
     "fields": {},
     "children": {
@@ -245,23 +405,1051 @@
       "required": true,
       "types": [
         {
-          "type": "binary_expression",
+          "type": "base_class_name",
           "named": true
         },
         {
-          "type": "char",
+          "type": "base_classes_names_list",
           "named": true
         },
         {
-          "type": "comma",
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "compound_stmt",
           "named": true
         },
         {
-          "type": "fact_params",
+          "type": "decl_sect_list1",
           "named": true
         },
         {
-          "type": "false",
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case_label_list",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case_label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "const_elem",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case_label_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case_label",
+          "named": true
+        },
+        {
+          "type": "case_label_list",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case_item",
+          "named": true
+        },
+        {
+          "type": "case_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case_list",
+          "named": true
+        },
+        {
+          "type": "else_case",
+          "named": true
+        },
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "tkCase",
+          "named": true
+        },
+        {
+          "type": "tkEnd",
+          "named": true
+        },
+        {
+          "type": "tkOf",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_attribute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAbstract",
+          "named": true
+        },
+        {
+          "type": "tkAuto",
+          "named": true
+        },
+        {
+          "type": "tkPartial",
+          "named": true
+        },
+        {
+          "type": "tkSealed",
+          "named": true
+        },
+        {
+          "type": "tkStatic",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_attributes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "class_attributes1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_attributes1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_attribute",
+          "named": true
+        },
+        {
+          "type": "class_attributes1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_or_interface_keyword",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkClass",
+          "named": true
+        },
+        {
+          "type": "tkInterface",
+          "named": true
+        },
+        {
+          "type": "tkRecord",
+          "named": true
+        },
+        {
+          "type": "tkTemplate",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_or_static",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkClass",
+          "named": true
+        },
+        {
+          "type": "tkStatic",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "collection_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_pattern_expr_list",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "collection_pattern_expr_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_pattern_expr_list",
+          "named": true
+        },
+        {
+          "type": "collection_pattern_list_item",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "collection_pattern_list_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_pattern",
+          "named": true
+        },
+        {
+          "type": "collection_pattern_var_item",
+          "named": true
+        },
+        {
+          "type": "literal_or_number",
+          "named": true
+        },
+        {
+          "type": "pattern_optional_var",
+          "named": true
+        },
+        {
+          "type": "tkDotDot",
+          "named": true
+        },
+        {
+          "type": "tkUnderscore",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "collection_pattern_var_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "common_lambda_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "case_stmt",
+          "named": true
+        },
+        {
+          "type": "compound_stmt",
+          "named": true
+        },
+        {
+          "type": "for_stmt",
+          "named": true
+        },
+        {
+          "type": "foreach_stmt",
+          "named": true
+        },
+        {
+          "type": "if_stmt",
+          "named": true
+        },
+        {
+          "type": "lock_stmt",
+          "named": true
+        },
+        {
+          "type": "loop_stmt",
+          "named": true
+        },
+        {
+          "type": "raise_stmt",
+          "named": true
+        },
+        {
+          "type": "repeat_stmt",
+          "named": true
+        },
+        {
+          "type": "try_stmt",
+          "named": true
+        },
+        {
+          "type": "while_stmt",
+          "named": true
+        },
+        {
+          "type": "yield_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "compound_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkBegin",
+          "named": true
+        },
+        {
+          "type": "tkEnd",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_addop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkMinus",
+          "named": true
+        },
+        {
+          "type": "tkOr",
+          "named": true
+        },
+        {
+          "type": "tkPlus",
+          "named": true
+        },
+        {
+          "type": "tkXor",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "only_const_decl",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "const_decl_sect",
+          "named": true
+        },
+        {
+          "type": "tkConst",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_elem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "tkDotDot",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_elem_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "const_elem_list1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_elem_list1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_elem",
+          "named": true
+        },
+        {
+          "type": "const_elem_list1",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "const_relop_expr",
+          "named": true
+        },
+        {
+          "type": "question_constexpr",
+          "named": true
+        },
+        {
+          "type": "tkDoubleQuestion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_factor",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "const_factor",
+          "named": true
+        },
+        {
+          "type": "const_set",
+          "named": true
+        },
+        {
+          "type": "const_variable",
+          "named": true
+        },
+        {
+          "type": "default_expr",
+          "named": true
+        },
+        {
+          "type": "new_expr",
+          "named": true
+        },
+        {
+          "type": "sign",
+          "named": true
+        },
+        {
+          "type": "tkAddressOf",
+          "named": true
+        },
+        {
+          "type": "tkNil",
+          "named": true
+        },
+        {
+          "type": "tkNot",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_factor_without_unary_op",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "const_variable",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_field",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_field_name",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "typed_const",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_field_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_field_list_1",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_field_list_1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_field",
+          "named": true
+        },
+        {
+          "type": "const_field_list_1",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_field_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_mulop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAnd",
+          "named": true
+        },
+        {
+          "type": "tkDiv",
+          "named": true
+        },
+        {
+          "type": "tkMod",
+          "named": true
+        },
+        {
+          "type": "tkShl",
+          "named": true
+        },
+        {
+          "type": "tkShr",
+          "named": true
+        },
+        {
+          "type": "tkSlash",
+          "named": true
+        },
+        {
+          "type": "tkStar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_pattern_expr_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_pattern_expr_list",
+          "named": true
+        },
+        {
+          "type": "const_pattern_expression",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_pattern_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "literal_or_number",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "sizeof_expr",
+          "named": true
+        },
+        {
+          "type": "tkNil",
+          "named": true
+        },
+        {
+          "type": "typeof_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_relop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkEqual",
+          "named": true
+        },
+        {
+          "type": "tkGreater",
+          "named": true
+        },
+        {
+          "type": "tkGreaterEqual",
+          "named": true
+        },
+        {
+          "type": "tkIn",
+          "named": true
+        },
+        {
+          "type": "tkLower",
+          "named": true
+        },
+        {
+          "type": "tkLowerEqual",
+          "named": true
+        },
+        {
+          "type": "tkNotEqual",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_relop_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_relop",
+          "named": true
+        },
+        {
+          "type": "const_relop_expr",
+          "named": true
+        },
+        {
+          "type": "const_simple_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_set",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "elem_list",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        },
+        {
+          "type": "tkVertParen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_simple_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_addop",
+          "named": true
+        },
+        {
+          "type": "const_simple_expr",
+          "named": true
+        },
+        {
+          "type": "const_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_term",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "as_is_constexpr",
+          "named": true
+        },
+        {
+          "type": "const_factor",
+          "named": true
+        },
+        {
+          "type": "const_mulop",
+          "named": true
+        },
+        {
+          "type": "const_term",
+          "named": true
+        },
+        {
+          "type": "power_constexpr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_variable",
+          "named": true
+        },
+        {
+          "type": "const_variable_2",
+          "named": true
+        },
+        {
+          "type": "format_const_expr",
           "named": true
         },
         {
@@ -269,38 +1457,2819 @@
           "named": true
         },
         {
-          "type": "integer",
+          "type": "literal",
           "named": true
         },
         {
-          "type": "left_paren",
+          "type": "sizeof_expr",
           "named": true
         },
         {
-          "type": "real",
+          "type": "template_type_params",
           "named": true
         },
         {
-          "type": "right_paren",
+          "type": "tkAmpersend",
           "named": true
         },
         {
-          "type": "true",
+          "type": "tkInherited",
           "named": true
         },
         {
-          "type": "unary_expression",
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        },
+        {
+          "type": "typeof_expr",
+          "named": true
+        },
+        {
+          "type": "unsigned_number",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "for_statement",
+    "type": "const_variable_2",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_elem_list",
+          "named": true
+        },
+        {
+          "type": "identifier_or_keyword",
+          "named": true
+        },
+        {
+          "type": "optional_const_func_expr_list",
+          "named": true
+        },
+        {
+          "type": "tkDeref",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constr_destr_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "constr_destr_header",
+          "named": true
+        },
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "optional_proc_name",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkConstructor",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constr_destr_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "optional_method_modificators",
+          "named": true
+        },
+        {
+          "type": "optional_proc_name",
+          "named": true
+        },
+        {
+          "type": "tkConstructor",
+          "named": true
+        },
+        {
+          "type": "tkDestructor",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "const_decl_sect",
+          "named": true
+        },
+        {
+          "type": "label_decl_sect",
+          "named": true
+        },
+        {
+          "type": "proc_func_constr_destr_decl_with_attr",
+          "named": true
+        },
+        {
+          "type": "res_str_decl_sect",
+          "named": true
+        },
+        {
+          "type": "type_decl_sect",
+          "named": true
+        },
+        {
+          "type": "var_decl_sect",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "decl_sect_list1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "decl_sect",
+          "named": true
+        },
+        {
+          "type": "decl_sect_list1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "decl_sect_list_proc_func_only",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "decl_sect_list_proc_func_only",
+          "named": true
+        },
+        {
+          "type": "proc_func_decl_noclass",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "deconstruction_or_const_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_pattern_expr_list",
+          "named": true
+        },
+        {
+          "type": "pattern_out_param_list_optional_var",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "default_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "tkDefault",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dotted_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dotted_identifier",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "identifier_or_keyword",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "elem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "tkDotDot",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "elem_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "elem_list1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "elem_list1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "elem",
+          "named": true
+        },
+        {
+          "type": "elem_list1",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "else_case",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkElse",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "empty_template_type_reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "template_type_empty_params",
+          "named": true
+        },
+        {
+          "type": "tkAmpersend",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enumeration_id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "tkEqual",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enumeration_id_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "enumeration_id",
+          "named": true
+        },
+        {
+          "type": "enumeration_id_list",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exception_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exception_block_else_branch",
+          "named": true
+        },
+        {
+          "type": "exception_handler_list",
+          "named": true
+        },
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exception_block_else_branch",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkElse",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exception_class_type_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exception_handler",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exception_identifier",
+          "named": true
+        },
+        {
+          "type": "tkDo",
+          "named": true
+        },
+        {
+          "type": "tkOn",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exception_handler_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exception_handler",
+          "named": true
+        },
+        {
+          "type": "exception_handler_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exception_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "exception_class_type_identifier",
+          "named": true
+        },
+        {
+          "type": "exception_variable",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exception_variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expl_func_decl_lambda",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "full_lambda_fp_list",
+          "named": true
+        },
+        {
+          "type": "lambda_function_body",
+          "named": true
+        },
+        {
+          "type": "lambda_procedure_body",
+          "named": true
+        },
+        {
+          "type": "lambda_type_ref_noproctype",
+          "named": true
+        },
+        {
+          "type": "tkArrow",
+          "named": true
+        },
+        {
+          "type": "tkFunction",
+          "named": true
+        },
+        {
+          "type": "tkProcedure",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "format_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_as_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "allowable_expr_as_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_dq",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_dq",
+          "named": true
+        },
+        {
+          "type": "relop_expr",
+          "named": true
+        },
+        {
+          "type": "tkDoubleQuestion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_l1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_dq",
+          "named": true
+        },
+        {
+          "type": "new_question_expr",
+          "named": true
+        },
+        {
+          "type": "question_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_l1_for_lambda",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_dq",
+          "named": true
+        },
+        {
+          "type": "func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "question_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_l1_for_new_question_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_dq",
+          "named": true
+        },
+        {
+          "type": "new_question_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_l1_for_question_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_dq",
+          "named": true
+        },
+        {
+          "type": "question_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_l1_func_decl_lambda",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "func_decl_lambda",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_l1_or_unpacked",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "lambda_unpacked_params",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_l1_or_unpacked_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1_or_unpacked",
+          "named": true
+        },
+        {
+          "type": "expr_l1_or_unpacked_list",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_list",
+          "named": true
+        },
+        {
+          "type": "expr_with_func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_with_func_decl_lambda",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "tkInherited",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "external_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "external_directive_ident",
+          "named": true
+        },
+        {
+          "type": "tkExternal",
+          "named": true
+        },
+        {
+          "type": "tkName",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "external_directive_ident",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "factor",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "default_expr",
+          "named": true
+        },
+        {
+          "type": "elem_list",
+          "named": true
+        },
+        {
+          "type": "factor",
+          "named": true
+        },
+        {
+          "type": "literal_or_number",
+          "named": true
+        },
+        {
+          "type": "sign",
+          "named": true
+        },
+        {
+          "type": "tkDeref",
+          "named": true
+        },
+        {
+          "type": "tkNil",
+          "named": true
+        },
+        {
+          "type": "tkNot",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "var_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "factor_without_unary_op",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "literal_or_number",
+          "named": true
+        },
+        {
+          "type": "var_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkEvent",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        },
+        {
+          "type": "var_decl_part",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_in_unnamed_object",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "relop_expr",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_or_const_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "simple_field_or_const_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_or_const_definition_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_or_const_definition",
+          "named": true
+        },
+        {
+          "type": "field_or_const_definition_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "file_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkFile",
+          "named": true
+        },
+        {
+          "type": "tkOf",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "for_cycle_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkDownto",
+          "named": true
+        },
+        {
+          "type": "tkTo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "for_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "for_cycle_type",
+          "named": true
+        },
+        {
+          "type": "for_stmt_decl_or_assign",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "optional_tk_do",
+          "named": true
+        },
+        {
+          "type": "optional_var",
+          "named": true
+        },
+        {
+          "type": "tkFor",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "for_stmt_decl_or_assign",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "foreach_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "foreach_stmt_ident_dype_opt",
+          "named": true
+        },
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkDo",
+          "named": true
+        },
+        {
+          "type": "tkForeach",
+          "named": true
+        },
+        {
+          "type": "tkIn",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "foreach_stmt_ident_dype_opt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "format_const_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "format_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_expr",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fp_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fp_sect_list",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fp_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "simple_fp_sect",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fp_sect_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fp_sect",
+          "named": true
+        },
+        {
+          "type": "fp_sect_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fptype",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fptype_noproctype",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "simple_type",
+          "named": true
+        },
+        {
+          "type": "string_type",
+          "named": true
+        },
+        {
+          "type": "structured_type",
+          "named": true
+        },
+        {
+          "type": "template_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "full_lambda_fp_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "full_lambda_fp_list",
+          "named": true
+        },
+        {
+          "type": "lambda_simple_fp_sect",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_class_name_ident",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "func_name_with_template_args",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_class_name_ident_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "func_class_name_ident",
+          "named": true
+        },
+        {
+          "type": "func_class_name_ident_list",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_decl_lambda",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expl_func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "expr_l1_or_unpacked",
+          "named": true
+        },
+        {
+          "type": "expr_l1_or_unpacked_list",
+          "named": true
+        },
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "full_lambda_fp_list",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "lambda_function_body",
+          "named": true
+        },
+        {
+          "type": "lambda_type_ref",
+          "named": true
+        },
+        {
+          "type": "lambda_type_ref_noproctype",
+          "named": true
+        },
+        {
+          "type": "lambda_unpacked_params",
+          "named": true
+        },
+        {
+          "type": "optional_full_lambda_fp_list",
+          "named": true
+        },
+        {
+          "type": "rem_lambda",
+          "named": true
+        },
+        {
+          "type": "tkArrow",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "func_name",
+          "named": true
+        },
+        {
+          "type": "optional_method_modificators",
+          "named": true
+        },
+        {
+          "type": "optional_where_section",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkFunction",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_meth_name_ident",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "func_name_with_template_args",
+          "named": true
+        },
+        {
+          "type": "operator_name_ident",
+          "named": true
+        },
+        {
+          "type": "template_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "func_class_name_ident_list",
+          "named": true
+        },
+        {
+          "type": "func_meth_name_ident",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_name_ident",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_name_with_template_args",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "func_name_ident",
+          "named": true
+        },
+        {
+          "type": "template_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "goto_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "label_name",
+          "named": true
+        },
+        {
+          "type": "tkGoto",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "head_compiler_directives",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "head_compiler_directives",
+          "named": true
+        },
+        {
+          "type": "one_compiler_directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ident_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ident_or_keyword_pointseparator_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_or_keyword_pointseparator_list",
+          "named": true
+        },
+        {
+          "type": "identifier_or_keyword",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "non_reserved",
+          "named": true
+        },
+        {
+          "type": "property_specifier_directives",
+          "named": true
+        },
+        {
+          "type": "tkIdentifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier_keyword_operatorname",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "operator_name_ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier_or_keyword",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "reserved_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "tkElse",
+          "named": true
+        },
+        {
+          "type": "tkIf",
+          "named": true
+        },
+        {
+          "type": "tkThen",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "implementation_part",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "decl_sect_list1",
+          "named": true
+        },
+        {
+          "type": "tkImplementation",
+          "named": true
+        },
+        {
+          "type": "uses_clause",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inclass_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "compound_stmt",
+          "named": true
+        },
+        {
+          "type": "external_block",
+          "named": true
+        },
+        {
+          "type": "inclass_decl_sect_list1",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inclass_constr_destr_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "constr_destr_header",
+          "named": true
+        },
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "inclass_block",
+          "named": true
+        },
+        {
+          "type": "optional_proc_name",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkConstructor",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inclass_decl_sect_list1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "abc_decl_sect",
+          "named": true
+        },
+        {
+          "type": "inclass_decl_sect_list1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inclass_proc_func_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "inclass_proc_func_decl_noclass",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inclass_proc_func_decl_noclass",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1_func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "func_name",
+          "named": true
+        },
+        {
+          "type": "inclass_block",
+          "named": true
+        },
+        {
+          "type": "optional_method_modificators1",
+          "named": true
+        },
+        {
+          "type": "proc_func_header",
+          "named": true
+        },
+        {
+          "type": "proc_name",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkFunction",
+          "named": true
+        },
+        {
+          "type": "tkProcedure",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inherited_message",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkInherited",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "init_const_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array_const",
+          "named": true
+        },
+        {
+          "type": "const_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "initialization_part",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkBegin",
+          "named": true
+        },
+        {
+          "type": "tkEnd",
+          "named": true
+        },
+        {
+          "type": "tkFinalization",
+          "named": true
+        },
+        {
+          "type": "tkInitialization",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "int_decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "const_decl_sect",
+          "named": true
+        },
+        {
+          "type": "int_func_header",
+          "named": true
+        },
+        {
+          "type": "int_proc_header",
+          "named": true
+        },
+        {
+          "type": "res_str_decl_sect",
+          "named": true
+        },
+        {
+          "type": "type_decl_sect",
+          "named": true
+        },
+        {
+          "type": "var_decl_sect",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "int_decl_sect_list1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int_decl_sect",
+          "named": true
+        },
+        {
+          "type": "int_decl_sect_list1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "int_func_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "func_header",
+          "named": true
+        },
+        {
+          "type": "tkForward",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "int_proc_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "proc_header",
+          "named": true
+        },
+        {
+          "type": "tkForward",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "interface_part",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int_decl_sect_list1",
+          "named": true
+        },
+        {
+          "type": "tkInterface",
+          "named": true
+        },
+        {
+          "type": "uses_clause",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_type_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        },
+        {
+          "type": "tkIs",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyword",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAbstract",
+          "named": true
+        },
+        {
+          "type": "tkAnd",
+          "named": true
+        },
+        {
+          "type": "tkArray",
+          "named": true
+        },
+        {
+          "type": "tkAs",
+          "named": true
+        },
+        {
+          "type": "tkAuto",
+          "named": true
+        },
+        {
+          "type": "tkBegin",
+          "named": true
+        },
+        {
+          "type": "tkCase",
+          "named": true
+        },
+        {
+          "type": "tkClass",
+          "named": true
+        },
+        {
+          "type": "tkConst",
+          "named": true
+        },
+        {
+          "type": "tkConstructor",
+          "named": true
+        },
+        {
+          "type": "tkDefault",
+          "named": true
+        },
+        {
+          "type": "tkDestructor",
+          "named": true
+        },
+        {
+          "type": "tkDiv",
+          "named": true
+        },
+        {
+          "type": "tkDo",
+          "named": true
+        },
+        {
+          "type": "tkDownto",
+          "named": true
+        },
+        {
+          "type": "tkElse",
+          "named": true
+        },
+        {
+          "type": "tkEnd",
+          "named": true
+        },
+        {
+          "type": "tkEvent",
+          "named": true
+        },
+        {
+          "type": "tkExcept",
+          "named": true
+        },
+        {
+          "type": "tkExplicit",
+          "named": true
+        },
+        {
+          "type": "tkExtensionMethod",
+          "named": true
+        },
+        {
+          "type": "tkExternal",
+          "named": true
+        },
+        {
+          "type": "tkFile",
+          "named": true
+        },
+        {
+          "type": "tkFinalization",
+          "named": true
+        },
+        {
+          "type": "tkFinally",
+          "named": true
+        },
+        {
+          "type": "tkFor",
+          "named": true
+        },
+        {
+          "type": "tkForeach",
+          "named": true
+        },
+        {
+          "type": "tkForward",
+          "named": true
+        },
+        {
+          "type": "tkFunction",
+          "named": true
+        },
+        {
+          "type": "tkGoto",
+          "named": true
+        },
+        {
+          "type": "tkIf",
+          "named": true
+        },
+        {
+          "type": "tkImplementation",
+          "named": true
+        },
+        {
+          "type": "tkImplicit",
+          "named": true
+        },
+        {
+          "type": "tkIn",
+          "named": true
+        },
+        {
+          "type": "tkInherited",
+          "named": true
+        },
+        {
+          "type": "tkInitialization",
+          "named": true
+        },
+        {
+          "type": "tkInterface",
+          "named": true
+        },
+        {
+          "type": "tkIs",
+          "named": true
+        },
+        {
+          "type": "tkLabel",
+          "named": true
+        },
+        {
+          "type": "tkLibrary",
+          "named": true
+        },
+        {
+          "type": "tkLock",
+          "named": true
+        },
+        {
+          "type": "tkLoop",
+          "named": true
+        },
+        {
+          "type": "tkMatch",
+          "named": true
+        },
+        {
+          "type": "tkMod",
+          "named": true
+        },
+        {
+          "type": "tkNamespace",
+          "named": true
+        },
+        {
+          "type": "tkNil",
+          "named": true
+        },
+        {
+          "type": "tkNot",
+          "named": true
+        },
+        {
+          "type": "tkOf",
+          "named": true
+        },
+        {
+          "type": "tkOn",
+          "named": true
+        },
+        {
+          "type": "tkOr",
+          "named": true
+        },
+        {
+          "type": "tkOverload",
+          "named": true
+        },
+        {
+          "type": "tkOverride",
+          "named": true
+        },
+        {
+          "type": "tkParams",
+          "named": true
+        },
+        {
+          "type": "tkPartial",
+          "named": true
+        },
+        {
+          "type": "tkProcedure",
+          "named": true
+        },
+        {
+          "type": "tkProgram",
+          "named": true
+        },
+        {
+          "type": "tkProperty",
+          "named": true
+        },
+        {
+          "type": "tkRaise",
+          "named": true
+        },
+        {
+          "type": "tkRecord",
+          "named": true
+        },
+        {
+          "type": "tkReintroduce",
+          "named": true
+        },
+        {
+          "type": "tkRepeat",
+          "named": true
+        },
+        {
+          "type": "tkSealed",
+          "named": true
+        },
+        {
+          "type": "tkSequence",
+          "named": true
+        },
+        {
+          "type": "tkSet",
+          "named": true
+        },
+        {
+          "type": "tkShl",
+          "named": true
+        },
+        {
+          "type": "tkShr",
+          "named": true
+        },
+        {
+          "type": "tkSizeOf",
+          "named": true
+        },
+        {
+          "type": "tkStatic",
+          "named": true
+        },
+        {
+          "type": "tkTemplate",
+          "named": true
+        },
+        {
+          "type": "tkThen",
+          "named": true
+        },
+        {
+          "type": "tkTo",
+          "named": true
+        },
+        {
+          "type": "tkTry",
+          "named": true
+        },
+        {
+          "type": "tkType",
+          "named": true
+        },
+        {
+          "type": "tkTypeOf",
+          "named": true
+        },
+        {
+          "type": "tkUnit",
+          "named": true
+        },
+        {
+          "type": "tkUntil",
+          "named": true
+        },
+        {
+          "type": "tkUses",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        },
+        {
+          "type": "tkVirtual",
+          "named": true
+        },
+        {
+          "type": "tkWhen",
+          "named": true
+        },
+        {
+          "type": "tkWhere",
+          "named": true
+        },
+        {
+          "type": "tkWhile",
+          "named": true
+        },
+        {
+          "type": "tkWith",
+          "named": true
+        },
+        {
+          "type": "tkXor",
+          "named": true
+        },
+        {
+          "type": "tkYield",
+          "named": true
+        },
+        {
+          "type": "visibility_specifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label_decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "label_list",
+          "named": true
+        },
+        {
+          "type": "tkLabel",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "label_list",
+          "named": true
+        },
+        {
+          "type": "label_name",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "tkInteger",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_function_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "common_lambda_body",
+          "named": true
+        },
+        {
+          "type": "expr_l1_for_lambda",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_list_of_unpacked_params_or_id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lambda_list_of_unpacked_params_or_id",
+          "named": true
+        },
+        {
+          "type": "lambda_unpacked_params_or_id",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_procedure_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -308,23 +4277,703 @@
           "named": true
         },
         {
-          "type": "binary_expression",
+          "type": "common_lambda_body",
           "named": true
         },
         {
-          "type": "block_statement",
+          "type": "proc_call",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_simple_fp_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_list",
           "named": true
         },
         {
-          "type": "char",
+          "type": "lambda_type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_type_ref",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fptype",
           "named": true
         },
         {
-          "type": "false",
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_type_ref_noproctype",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fptype_noproctype",
           "named": true
         },
         {
-          "type": "for_statement",
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_unpacked_params",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lambda_list_of_unpacked_params_or_id",
+          "named": true
+        },
+        {
+          "type": "lambda_unpacked_params_or_id",
+          "named": true
+        },
+        {
+          "type": "tkBackSlashRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_unpacked_params_or_id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "lambda_unpacked_params",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_fields_in_unnamed_object",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_in_unnamed_object",
+          "named": true
+        },
+        {
+          "type": "list_fields_in_unnamed_object",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "literal_list",
+          "named": true
+        },
+        {
+          "type": "tkFormatStringLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "literal_list",
+          "named": true
+        },
+        {
+          "type": "one_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal_or_number",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "unsigned_number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lock_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "tkDo",
+          "named": true
+        },
+        {
+          "type": "tkLock",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "loop_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "tkDo",
+          "named": true
+        },
+        {
+          "type": "tkLoop",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "match_with",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "else_case",
+          "named": true
+        },
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "pattern_cases",
+          "named": true
+        },
+        {
+          "type": "tkEnd",
+          "named": true
+        },
+        {
+          "type": "tkMatch",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "tkWith",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "member_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_or_const_definition_list",
+          "named": true
+        },
+        {
+          "type": "method_decl_list",
+          "named": true
+        },
+        {
+          "type": "optional_semicolon",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "member_list_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "member_list",
+          "named": true
+        },
+        {
+          "type": "member_list_section",
+          "named": true
+        },
+        {
+          "type": "ot_visibility_specifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "meth_modificator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAbstract",
+          "named": true
+        },
+        {
+          "type": "tkExtensionMethod",
+          "named": true
+        },
+        {
+          "type": "tkOverload",
+          "named": true
+        },
+        {
+          "type": "tkOverride",
+          "named": true
+        },
+        {
+          "type": "tkReintroduce",
+          "named": true
+        },
+        {
+          "type": "tkVirtual",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "meth_modificators",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "meth_modificator",
+          "named": true
+        },
+        {
+          "type": "meth_modificators",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "method_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "inclass_constr_destr_decl",
+          "named": true
+        },
+        {
+          "type": "inclass_proc_func_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "method_decl_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "method_decl_list",
+          "named": true
+        },
+        {
+          "type": "method_or_property_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "method_decl_withattr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "method_decl",
+          "named": true
+        },
+        {
+          "type": "method_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "method_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "constr_destr_header",
+          "named": true
+        },
+        {
+          "type": "method_procfunc_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "method_or_property_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "method_decl_withattr",
+          "named": true
+        },
+        {
+          "type": "property_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "method_procfunc_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "proc_func_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mulop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAnd",
+          "named": true
+        },
+        {
+          "type": "tkDiv",
+          "named": true
+        },
+        {
+          "type": "tkMod",
+          "named": true
+        },
+        {
+          "type": "tkShl",
+          "named": true
+        },
+        {
+          "type": "tkShr",
+          "named": true
+        },
+        {
+          "type": "tkSlash",
+          "named": true
+        },
+        {
+          "type": "tkStar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "new_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_fields_in_unnamed_object",
+          "named": true
+        },
+        {
+          "type": "optional_array_initializer",
+          "named": true
+        },
+        {
+          "type": "optional_expr_list",
+          "named": true
+        },
+        {
+          "type": "optional_expr_list_with_bracket",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "tkClass",
+          "named": true
+        },
+        {
+          "type": "tkNew",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "new_question_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1_for_new_question_expr",
+          "named": true
+        },
+        {
+          "type": "tkElse",
+          "named": true
+        },
+        {
+          "type": "tkIf",
+          "named": true
+        },
+        {
+          "type": "tkThen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "non_reserved",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkName",
+          "named": true
+        },
+        {
+          "type": "tkNew",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "object_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_attributes",
+          "named": true
+        },
+        {
+          "type": "class_or_interface_keyword",
+          "named": true
+        },
+        {
+          "type": "optional_base_classes",
+          "named": true
+        },
+        {
+          "type": "optional_component_list_seq_end",
+          "named": true
+        },
+        {
+          "type": "optional_where_section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "one_attribute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_variable",
           "named": true
         },
         {
@@ -332,46 +4981,14 @@
           "named": true
         },
         {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "left_paren",
-          "named": true
-        },
-        {
-          "type": "procedure_call_statement",
-          "named": true
-        },
-        {
-          "type": "real",
-          "named": true
-        },
-        {
-          "type": "right_paren",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        },
-        {
-          "type": "while_statement",
+          "type": "tkColon",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "formal_params",
+    "type": "one_compiler_directive",
     "named": true,
     "fields": {},
     "children": {
@@ -379,22 +4996,41 @@
       "required": true,
       "types": [
         {
-          "type": "formal_params_list",
+          "type": "tkDirectiveName",
           "named": true
         },
         {
-          "type": "left_paren",
+          "type": "tkIdentifier",
           "named": true
         },
         {
-          "type": "right_paren",
+          "type": "tkStringLiteral",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "formal_params_list",
+    "type": "one_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAsciiChar",
+          "named": true
+        },
+        {
+          "type": "tkStringLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "one_or_some_attribute",
     "named": true,
     "fields": {},
     "children": {
@@ -402,22 +5038,22 @@
       "required": true,
       "types": [
         {
-          "type": "formal_params_list",
+          "type": "one_attribute",
           "named": true
         },
         {
-          "type": "formal_params_sequence",
+          "type": "one_or_some_attribute",
           "named": true
         },
         {
-          "type": "semicolon",
+          "type": "tkComma",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "formal_params_sequence",
+    "type": "only_const_decl",
     "named": true,
     "fields": {},
     "children": {
@@ -425,26 +5061,34 @@
       "required": true,
       "types": [
         {
-          "type": "colon",
+          "type": "const_name",
           "named": true
         },
         {
-          "type": "identifier_list",
+          "type": "init_const_expr",
           "named": true
         },
         {
-          "type": "type",
+          "type": "tkColon",
           "named": true
         },
         {
-          "type": "var",
+          "type": "tkEqual",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        },
+        {
+          "type": "typed_const",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "identifier_list",
+    "type": "operator_name_ident",
     "named": true,
     "fields": {},
     "children": {
@@ -452,7 +5096,729 @@
       "required": true,
       "types": [
         {
-          "type": "comma",
+          "type": "overload_operator",
+          "named": true
+        },
+        {
+          "type": "tkOperator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_array_initializer",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "typed_const_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_base_classes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "base_classes_names_list",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_component_list_seq_end",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "member_list_section",
+          "named": true
+        },
+        {
+          "type": "tkEnd",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_const_func_expr_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_expr_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_expr_list_with_bracket",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "optional_expr_list",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_full_lambda_fp_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "full_lambda_fp_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_head_compiler_directives",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "head_compiler_directives",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_method_modificators",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "meth_modificators",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_method_modificators1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "meth_modificators",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_proc_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "proc_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_property_initialization",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_read_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_with_func_decl_lambda",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_semicolon",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_tk_do",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkDo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_tk_point",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tkDotDot",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_var",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "optional_where_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "where_part_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ot_visibility_specifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkInternal",
+          "named": true
+        },
+        {
+          "type": "tkPrivate",
+          "named": true
+        },
+        {
+          "type": "tkProtected",
+          "named": true
+        },
+        {
+          "type": "tkPublic",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "overload_operator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "assign_operator",
+          "named": true
+        },
+        {
+          "type": "tkAnd",
+          "named": true
+        },
+        {
+          "type": "tkDiv",
+          "named": true
+        },
+        {
+          "type": "tkEqual",
+          "named": true
+        },
+        {
+          "type": "tkExplicit",
+          "named": true
+        },
+        {
+          "type": "tkGreater",
+          "named": true
+        },
+        {
+          "type": "tkGreaterEqual",
+          "named": true
+        },
+        {
+          "type": "tkImplicit",
+          "named": true
+        },
+        {
+          "type": "tkIn",
+          "named": true
+        },
+        {
+          "type": "tkLower",
+          "named": true
+        },
+        {
+          "type": "tkLowerEqual",
+          "named": true
+        },
+        {
+          "type": "tkMinus",
+          "named": true
+        },
+        {
+          "type": "tkMod",
+          "named": true
+        },
+        {
+          "type": "tkNot",
+          "named": true
+        },
+        {
+          "type": "tkNotEqual",
+          "named": true
+        },
+        {
+          "type": "tkOr",
+          "named": true
+        },
+        {
+          "type": "tkPlus",
+          "named": true
+        },
+        {
+          "type": "tkShl",
+          "named": true
+        },
+        {
+          "type": "tkShr",
+          "named": true
+        },
+        {
+          "type": "tkSlash",
+          "named": true
+        },
+        {
+          "type": "tkStar",
+          "named": true
+        },
+        {
+          "type": "tkStarStar",
+          "named": true
+        },
+        {
+          "type": "tkXor",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "param_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "param_name_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "param_name",
+          "named": true
+        },
+        {
+          "type": "param_name_list",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_decl_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter_decl",
+          "named": true
+        },
+        {
+          "type": "parameter_decl_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parse_goal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "decl_sect_list_proc_func_only",
+          "named": true
+        },
+        {
+          "type": "program_file",
+          "named": true
+        },
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkShortProgram",
+          "named": true
+        },
+        {
+          "type": "tkShortSFProgram",
+          "named": true
+        },
+        {
+          "type": "unit_file",
+          "named": true
+        },
+        {
+          "type": "uses_clause_one_or_empty",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "pattern_out_param_list",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern_case",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_pattern",
+          "named": true
+        },
+        {
+          "type": "deconstruction_or_const_pattern",
+          "named": true
+        },
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "pattern_optional_var",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkWhen",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern_cases",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "pattern_case",
+          "named": true
+        },
+        {
+          "type": "pattern_cases",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern_optional_var",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "pattern_out_param_list_optional_var",
+          "named": true
+        },
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern_out_param",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_pattern",
           "named": true
         },
         {
@@ -460,14 +5826,38 @@
           "named": true
         },
         {
-          "type": "identifier_list",
+          "type": "literal_or_number",
+          "named": true
+        },
+        {
+          "type": "pattern",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkUnderscore",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
+          "named": true
+        },
+        {
+          "type": "type_ref",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "if_statement",
+    "type": "pattern_out_param_list",
     "named": true,
     "fields": {},
     "children": {
@@ -475,27 +5865,61 @@
       "required": true,
       "types": [
         {
-          "type": "assignment",
+          "type": "pattern_out_param",
           "named": true
         },
         {
-          "type": "binary_expression",
+          "type": "pattern_out_param_list",
           "named": true
         },
         {
-          "type": "block_statement",
+          "type": "tkComma",
           "named": true
         },
         {
-          "type": "char",
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern_out_param_list_optional_var",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "pattern_out_param_list_optional_var",
           "named": true
         },
         {
-          "type": "false",
+          "type": "pattern_out_param_optional_var",
           "named": true
         },
         {
-          "type": "for_statement",
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern_out_param_optional_var",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_pattern",
           "named": true
         },
         {
@@ -503,46 +5927,42 @@
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "literal_or_number",
           "named": true
         },
         {
-          "type": "integer",
+          "type": "pattern_optional_var",
           "named": true
         },
         {
-          "type": "left_paren",
+          "type": "sign",
           "named": true
         },
         {
-          "type": "procedure_call_statement",
+          "type": "tkColon",
           "named": true
         },
         {
-          "type": "real",
+          "type": "tkUnderscore",
           "named": true
         },
         {
-          "type": "right_paren",
+          "type": "tkVar",
           "named": true
         },
         {
-          "type": "true",
+          "type": "tuple_pattern",
           "named": true
         },
         {
-          "type": "unary_expression",
-          "named": true
-        },
-        {
-          "type": "while_statement",
+          "type": "type_ref",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "mainblock",
+    "type": "pointer_type",
     "named": true,
     "fields": {},
     "children": {
@@ -550,26 +5970,18 @@
       "required": true,
       "types": [
         {
-          "type": "begin",
+          "type": "fptype",
           "named": true
         },
         {
-          "type": "declarations_sequence",
-          "named": true
-        },
-        {
-          "type": "end",
-          "named": true
-        },
-        {
-          "type": "statement_sequence",
+          "type": "tkDeref",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "module",
+    "type": "power_constexpr",
     "named": true,
     "fields": {},
     "children": {
@@ -577,7 +5989,1583 @@
       "required": true,
       "types": [
         {
-          "type": "dot",
+          "type": "const_factor",
+          "named": true
+        },
+        {
+          "type": "const_factor_without_unary_op",
+          "named": true
+        },
+        {
+          "type": "power_constexpr",
+          "named": true
+        },
+        {
+          "type": "sign",
+          "named": true
+        },
+        {
+          "type": "tkStarStar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "power_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "factor",
+          "named": true
+        },
+        {
+          "type": "factor_without_unary_op",
+          "named": true
+        },
+        {
+          "type": "power_expr",
+          "named": true
+        },
+        {
+          "type": "sign",
+          "named": true
+        },
+        {
+          "type": "tkStarStar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "var_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_func_constr_destr_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "constr_destr_decl",
+          "named": true
+        },
+        {
+          "type": "proc_func_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_func_constr_destr_decl_with_attr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "proc_func_constr_destr_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_func_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "proc_func_decl_noclass",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_func_decl_noclass",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "func_name",
+          "named": true
+        },
+        {
+          "type": "optional_method_modificators1",
+          "named": true
+        },
+        {
+          "type": "proc_func_external_block",
+          "named": true
+        },
+        {
+          "type": "proc_func_header",
+          "named": true
+        },
+        {
+          "type": "proc_name",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkForward",
+          "named": true
+        },
+        {
+          "type": "tkFunction",
+          "named": true
+        },
+        {
+          "type": "tkProcedure",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_func_external_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "external_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_func_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "func_header",
+          "named": true
+        },
+        {
+          "type": "proc_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "optional_method_modificators",
+          "named": true
+        },
+        {
+          "type": "optional_where_section",
+          "named": true
+        },
+        {
+          "type": "proc_name",
+          "named": true
+        },
+        {
+          "type": "tkProcedure",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "func_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_type_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "enumeration_id_list",
+          "named": true
+        },
+        {
+          "type": "fp_list",
+          "named": true
+        },
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "simple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "template_param",
+          "named": true
+        },
+        {
+          "type": "template_type",
+          "named": true
+        },
+        {
+          "type": "tkArrow",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkFunction",
+          "named": true
+        },
+        {
+          "type": "tkProcedure",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "procedural_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "procedural_type_kind",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "procedural_type_kind",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "proc_type_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "compound_stmt",
+          "named": true
+        },
+        {
+          "type": "decl_sect_list1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "optional_head_compiler_directives",
+          "named": true
+        },
+        {
+          "type": "optional_tk_point",
+          "named": true
+        },
+        {
+          "type": "program_block",
+          "named": true
+        },
+        {
+          "type": "program_header",
+          "named": true
+        },
+        {
+          "type": "uses_clause",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "program_heading_2",
+          "named": true
+        },
+        {
+          "type": "tkProgram",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program_heading_2",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "program_param_list",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program_param",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program_param_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "program_param",
+          "named": true
+        },
+        {
+          "type": "program_param_list",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "simple_property_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_interface",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "property_parameter_list",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_modificator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAbstract",
+          "named": true
+        },
+        {
+          "type": "tkOverride",
+          "named": true
+        },
+        {
+          "type": "tkReintroduce",
+          "named": true
+        },
+        {
+          "type": "tkVirtual",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter_decl_list",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_specifier_directives",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkRead",
+          "named": true
+        },
+        {
+          "type": "tkWrite",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_specifiers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "optional_read_expr",
+          "named": true
+        },
+        {
+          "type": "read_property_specifiers",
+          "named": true
+        },
+        {
+          "type": "tkRead",
+          "named": true
+        },
+        {
+          "type": "tkWrite",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        },
+        {
+          "type": "write_property_specifiers",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "question_constexpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkQuestion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "question_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1_for_question_expr",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkQuestion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "raise_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "tkRaise",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_addop",
+          "named": true
+        },
+        {
+          "type": "range_expr",
+          "named": true
+        },
+        {
+          "type": "range_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range_factor",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_elem_list",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "range_factor",
+          "named": true
+        },
+        {
+          "type": "sign",
+          "named": true
+        },
+        {
+          "type": "simple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "unsigned_number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range_term",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_mulop",
+          "named": true
+        },
+        {
+          "type": "range_factor",
+          "named": true
+        },
+        {
+          "type": "range_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "read_property_specifiers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "optional_read_expr",
+          "named": true
+        },
+        {
+          "type": "tkRead",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "record_const",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_field_list",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "record_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "member_list_section",
+          "named": true
+        },
+        {
+          "type": "optional_base_classes",
+          "named": true
+        },
+        {
+          "type": "optional_where_section",
+          "named": true
+        },
+        {
+          "type": "tkEnd",
+          "named": true
+        },
+        {
+          "type": "tkRecord",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "relop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkEqual",
+          "named": true
+        },
+        {
+          "type": "tkGreater",
+          "named": true
+        },
+        {
+          "type": "tkGreaterEqual",
+          "named": true
+        },
+        {
+          "type": "tkIn",
+          "named": true
+        },
+        {
+          "type": "tkLower",
+          "named": true
+        },
+        {
+          "type": "tkLowerEqual",
+          "named": true
+        },
+        {
+          "type": "tkNotEqual",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "relop_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "is_type_expr",
+          "named": true
+        },
+        {
+          "type": "new_question_expr",
+          "named": true
+        },
+        {
+          "type": "pattern_out_param_list",
+          "named": true
+        },
+        {
+          "type": "relop",
+          "named": true
+        },
+        {
+          "type": "relop_expr",
+          "named": true
+        },
+        {
+          "type": "simple_expr",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rem_lambda",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lambda_function_body",
+          "named": true
+        },
+        {
+          "type": "lambda_type_ref_noproctype",
+          "named": true
+        },
+        {
+          "type": "tkArrow",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "repeat_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkRepeat",
+          "named": true
+        },
+        {
+          "type": "tkUntil",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "res_str_decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "res_str_decl_sect",
+          "named": true
+        },
+        {
+          "type": "tkResourceString",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "reserved_keyword",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkOperator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkOf",
+          "named": true
+        },
+        {
+          "type": "tkSequence",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkOf",
+          "named": true
+        },
+        {
+          "type": "tkSet",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sign",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkMinus",
+          "named": true
+        },
+        {
+          "type": "tkPlus",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_expr",
+          "named": true
+        },
+        {
+          "type": "term1",
+          "named": true
+        },
+        {
+          "type": "tkDotDot",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_field_or_const_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "field_definition",
+          "named": true
+        },
+        {
+          "type": "only_const_decl",
+          "named": true
+        },
+        {
+          "type": "tkConst",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_fp_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "fptype",
+          "named": true
+        },
+        {
+          "type": "param_name_list",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkConst",
+          "named": true
+        },
+        {
+          "type": "tkParams",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_or_template_type_reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "template_type_params",
+          "named": true
+        },
+        {
+          "type": "tkAmpersend",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_property_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_defaultproperty",
+          "named": true
+        },
+        {
+          "type": "class_or_static",
+          "named": true
+        },
+        {
+          "type": "func_name",
+          "named": true
+        },
+        {
+          "type": "optional_property_initialization",
+          "named": true
+        },
+        {
+          "type": "property_interface",
+          "named": true
+        },
+        {
+          "type": "property_modificator",
+          "named": true
+        },
+        {
+          "type": "property_specifiers",
+          "named": true
+        },
+        {
+          "type": "tkAuto",
+          "named": true
+        },
+        {
+          "type": "tkProperty",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "enumeration_id_list",
+          "named": true
+        },
+        {
+          "type": "range_expr",
+          "named": true
+        },
+        {
+          "type": "tkDotDot",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_type_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "template_identifier_with_equal",
+          "named": true
+        },
+        {
+          "type": "tkEqual",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "type_decl_identifier",
+          "named": true
+        },
+        {
+          "type": "type_decl_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_type_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "identifier_or_keyword",
+          "named": true
+        },
+        {
+          "type": "simple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_type_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_type",
+          "named": true
+        },
+        {
+          "type": "simple_type_list",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_type_question",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_type",
+          "named": true
+        },
+        {
+          "type": "template_type",
+          "named": true
+        },
+        {
+          "type": "tkQuestion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sizeof_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkSizeOf",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "label_name",
+          "named": true
+        },
+        {
+          "type": "stmt",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "stmt_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "stmt",
+          "named": true
+        },
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "tkIdentifier",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "structured_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkPacked",
+          "named": true
+        },
+        {
+          "type": "unpacked_structured_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "template_arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "tkGreater",
+          "named": true
+        },
+        {
+          "type": "tkLower",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "template_identifier_with_equal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_list",
           "named": true
         },
         {
@@ -585,18 +7573,18 @@
           "named": true
         },
         {
-          "type": "mainblock",
+          "type": "tkGreaterEqual",
           "named": true
         },
         {
-          "type": "semicolon",
+          "type": "tkLower",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "procedure_call_statement",
+    "type": "template_param",
     "named": true,
     "fields": {},
     "children": {
@@ -604,26 +7592,30 @@
       "required": true,
       "types": [
         {
-          "type": "fact_params",
+          "type": "procedural_type",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "simple_type",
           "named": true
         },
         {
-          "type": "left_paren",
+          "type": "structured_type",
           "named": true
         },
         {
-          "type": "right_paren",
+          "type": "template_type",
+          "named": true
+        },
+        {
+          "type": "tkQuestion",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "procedure_declatarions",
+    "type": "template_param_list",
     "named": true,
     "fields": {},
     "children": {
@@ -631,30 +7623,22 @@
       "required": true,
       "types": [
         {
-          "type": "formal_params",
+          "type": "template_param",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "template_param_list",
           "named": true
         },
         {
-          "type": "mainblock",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "semicolon",
+          "type": "tkComma",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "return",
+    "type": "template_type",
     "named": true,
     "fields": {},
     "children": {
@@ -662,18 +7646,18 @@
       "required": true,
       "types": [
         {
-          "type": "colon",
+          "type": "simple_type_identifier",
           "named": true
         },
         {
-          "type": "type",
+          "type": "template_type_params",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "statement_sequence",
+    "type": "template_type_empty_params",
     "named": true,
     "fields": {},
     "children": {
@@ -681,47 +7665,149 @@
       "required": true,
       "types": [
         {
-          "type": "assignment",
+          "type": "template_empty_param_list",
           "named": true
         },
         {
-          "type": "block_statement",
+          "type": "tkGreater",
           "named": true
         },
         {
-          "type": "for_statement",
+          "type": "tkLower",
           "named": true
         },
         {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "procedure_call_statement",
-          "named": true
-        },
-        {
-          "type": "semicolon",
-          "named": true
-        },
-        {
-          "type": "statement_sequence",
-          "named": true
-        },
-        {
-          "type": "while_statement",
+          "type": "tkNotEqual",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "type",
+    "type": "template_type_params",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "template_param_list",
+          "named": true
+        },
+        {
+          "type": "tkGreater",
+          "named": true
+        },
+        {
+          "type": "tkLower",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "term",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "as_is_expr",
+          "named": true
+        },
+        {
+          "type": "factor",
+          "named": true
+        },
+        {
+          "type": "mulop",
+          "named": true
+        },
+        {
+          "type": "new_expr",
+          "named": true
+        },
+        {
+          "type": "new_question_expr",
+          "named": true
+        },
+        {
+          "type": "power_expr",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "term1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "addop",
+          "named": true
+        },
+        {
+          "type": "new_question_expr",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        },
+        {
+          "type": "term1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tkAssignOrEqual",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkEqual",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tkHex",
     "named": true,
     "fields": {}
   },
   {
-    "type": "unary_expression",
+    "type": "tkShortProgram",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "tkShortSFProgram",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "try_handler",
     "named": true,
     "fields": {},
     "children": {
@@ -729,15 +7815,123 @@
       "required": true,
       "types": [
         {
-          "type": "binary_expression",
+          "type": "exception_block",
           "named": true
         },
         {
-          "type": "char",
+          "type": "stmt_list",
           "named": true
         },
         {
-          "type": "false",
+          "type": "tkEnd",
+          "named": true
+        },
+        {
+          "type": "tkExcept",
+          "named": true
+        },
+        {
+          "type": "tkFinally",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "try_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "stmt_list",
+          "named": true
+        },
+        {
+          "type": "tkTry",
+          "named": true
+        },
+        {
+          "type": "try_handler",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1_or_unpacked",
+          "named": true
+        },
+        {
+          "type": "expr_l1_or_unpacked_list",
+          "named": true
+        },
+        {
+          "type": "lambda_type_ref",
+          "named": true
+        },
+        {
+          "type": "optional_full_lambda_fp_list",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern_item_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple_pattern_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection_pattern",
           "named": true
         },
         {
@@ -745,34 +7939,34 @@
           "named": true
         },
         {
-          "type": "integer",
+          "type": "literal_or_number",
           "named": true
         },
         {
-          "type": "left_paren",
+          "type": "pattern_optional_var",
           "named": true
         },
         {
-          "type": "real",
+          "type": "sign",
           "named": true
         },
         {
-          "type": "right_paren",
+          "type": "tkUnderscore",
           "named": true
         },
         {
-          "type": "true",
+          "type": "tkVar",
           "named": true
         },
         {
-          "type": "unary_expression",
+          "type": "tuple_pattern",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "var_declaration",
+    "type": "tuple_pattern_item_list",
     "named": true,
     "fields": {},
     "children": {
@@ -780,7 +7974,302 @@
       "required": true,
       "types": [
         {
-          "type": "colon",
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern_item",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern_item_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "simple_type_decl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_decl_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "template_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkType",
+          "named": true
+        },
+        {
+          "type": "type_decl",
+          "named": true
+        },
+        {
+          "type": "type_decl_sect",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_decl_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "object_type",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_ref",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "pointer_type",
+          "named": true
+        },
+        {
+          "type": "procedural_type",
+          "named": true
+        },
+        {
+          "type": "simple_type",
+          "named": true
+        },
+        {
+          "type": "simple_type_question",
+          "named": true
+        },
+        {
+          "type": "string_type",
+          "named": true
+        },
+        {
+          "type": "structured_type",
+          "named": true
+        },
+        {
+          "type": "template_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_ref_and_secific_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "type_ref_and_secific_list",
+          "named": true
+        },
+        {
+          "type": "type_ref_or_secific",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_ref_or_secific",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkClass",
+          "named": true
+        },
+        {
+          "type": "tkConstructor",
+          "named": true
+        },
+        {
+          "type": "tkRecord",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typecast_op",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAs",
+          "named": true
+        },
+        {
+          "type": "tkIs",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_const",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array_const",
+          "named": true
+        },
+        {
+          "type": "const_expr",
+          "named": true
+        },
+        {
+          "type": "record_const",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_const_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "typed_const_list1",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_const_list1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "typed_const_list1",
+          "named": true
+        },
+        {
+          "type": "typed_const_plus",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_const_plus",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "typed_const",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_var_init_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_simple_expr",
+          "named": true
+        },
+        {
+          "type": "const_term",
+          "named": true
+        },
+        {
+          "type": "expl_func_decl_lambda",
           "named": true
         },
         {
@@ -788,18 +8277,42 @@
           "named": true
         },
         {
-          "type": "semicolon",
+          "type": "lambda_function_body",
           "named": true
         },
         {
-          "type": "type",
+          "type": "lambda_type_ref",
+          "named": true
+        },
+        {
+          "type": "tkArrow",
+          "named": true
+        },
+        {
+          "type": "tkDotDot",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "typed_const_list",
+          "named": true
+        },
+        {
+          "type": "typed_const_plus",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "var_declarations",
+    "type": "typeof_expr",
     "named": true,
     "fields": {},
     "children": {
@@ -807,22 +8320,146 @@
       "required": true,
       "types": [
         {
-          "type": "var",
+          "type": "empty_template_type_reference",
           "named": true
         },
         {
-          "type": "var_declaration",
+          "type": "simple_or_template_type_reference",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkTypeOf",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "while_statement",
+    "type": "unit_file",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_declarations",
+          "named": true
+        },
+        {
+          "type": "decl_sect_list1",
+          "named": true
+        },
+        {
+          "type": "implementation_part",
+          "named": true
+        },
+        {
+          "type": "initialization_part",
+          "named": true
+        },
+        {
+          "type": "interface_part",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        },
+        {
+          "type": "unit_header",
+          "named": true
+        },
+        {
+          "type": "uses_clause",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unit_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_or_keyword_pointseparator_list",
+          "named": true
+        },
+        {
+          "type": "optional_head_compiler_directives",
+          "named": true
+        },
+        {
+          "type": "tkNamespace",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "unit_key_word",
+          "named": true
+        },
+        {
+          "type": "unit_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unit_key_word",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkLibrary",
+          "named": true
+        },
+        {
+          "type": "tkUnit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unit_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unlabelled_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -830,23 +8467,386 @@
           "named": true
         },
         {
-          "type": "binary_expression",
+          "type": "case_stmt",
           "named": true
         },
         {
-          "type": "block_statement",
+          "type": "compound_stmt",
           "named": true
         },
         {
-          "type": "char",
+          "type": "expr_as_stmt",
           "named": true
         },
         {
-          "type": "false",
+          "type": "for_stmt",
           "named": true
         },
         {
-          "type": "for_statement",
+          "type": "foreach_stmt",
+          "named": true
+        },
+        {
+          "type": "goto_stmt",
+          "named": true
+        },
+        {
+          "type": "if_stmt",
+          "named": true
+        },
+        {
+          "type": "inherited_message",
+          "named": true
+        },
+        {
+          "type": "lock_stmt",
+          "named": true
+        },
+        {
+          "type": "loop_stmt",
+          "named": true
+        },
+        {
+          "type": "match_with",
+          "named": true
+        },
+        {
+          "type": "proc_call",
+          "named": true
+        },
+        {
+          "type": "raise_stmt",
+          "named": true
+        },
+        {
+          "type": "repeat_stmt",
+          "named": true
+        },
+        {
+          "type": "try_stmt",
+          "named": true
+        },
+        {
+          "type": "var_stmt",
+          "named": true
+        },
+        {
+          "type": "while_stmt",
+          "named": true
+        },
+        {
+          "type": "with_stmt",
+          "named": true
+        },
+        {
+          "type": "yield_sequence_stmt",
+          "named": true
+        },
+        {
+          "type": "yield_stmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unpacked_structured_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "file_type",
+          "named": true
+        },
+        {
+          "type": "record_type",
+          "named": true
+        },
+        {
+          "type": "sequence_type",
+          "named": true
+        },
+        {
+          "type": "set_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unsigned_number",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkFloat",
+          "named": true
+        },
+        {
+          "type": "tkHex",
+          "named": true
+        },
+        {
+          "type": "tkInteger",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unsized_array_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkArray",
+          "named": true
+        },
+        {
+          "type": "tkOf",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "used_unit_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_or_keyword_pointseparator_list",
+          "named": true
+        },
+        {
+          "type": "tkIn",
+          "named": true
+        },
+        {
+          "type": "tkStringLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "used_units_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "used_unit_name",
+          "named": true
+        },
+        {
+          "type": "used_units_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "uses_clause",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "uses_clause",
+          "named": true
+        },
+        {
+          "type": "uses_clause_one",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "uses_clause_one",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "tkUses",
+          "named": true
+        },
+        {
+          "type": "used_units_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "uses_clause_one_or_empty",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "uses_clause_one",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_address",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkAddressOf",
+          "named": true
+        },
+        {
+          "type": "var_address",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_decl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "var_decl_part",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_decl_part",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_with_func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkAssignOrEqual",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "type_ref",
+          "named": true
+        },
+        {
+          "type": "typed_var_init_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_decl_sect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkEvent",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        },
+        {
+          "type": "var_decl_sect",
+          "named": true
+        },
+        {
+          "type": "var_decl_with_assign_var_tuple",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_decl_with_assign_var_tuple",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "ident_list",
           "named": true
         },
         {
@@ -854,254 +8854,1063 @@
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "tkAssign",
           "named": true
         },
         {
-          "type": "integer",
+          "type": "tkComma",
           "named": true
         },
         {
-          "type": "left_paren",
+          "type": "tkRoundClose",
           "named": true
         },
         {
-          "type": "procedure_call_statement",
+          "type": "tkRoundOpen",
           "named": true
         },
         {
-          "type": "real",
+          "type": "tkSemiColon",
           "named": true
         },
         {
-          "type": "right_paren",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        },
-        {
-          "type": "while_statement",
+          "type": "var_decl",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "!",
-    "named": false
+    "type": "var_ident_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        },
+        {
+          "type": "var_ident_list",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "%",
-    "named": false
+    "type": "var_question_point",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkQuestionPoint",
+          "named": true
+        },
+        {
+          "type": "var_question_point",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "%=",
-    "named": false
+    "type": "var_reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "var_address",
+          "named": true
+        },
+        {
+          "type": "var_question_point",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "&",
-    "named": false
+    "type": "var_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "tkAssign",
+          "named": true
+        },
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkVar",
+          "named": true
+        },
+        {
+          "type": "var_decl_part",
+          "named": true
+        },
+        {
+          "type": "var_ident_list",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "*",
-    "named": false
+    "type": "variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "elem_list",
+          "named": true
+        },
+        {
+          "type": "expr",
+          "named": true
+        },
+        {
+          "type": "expr_list",
+          "named": true
+        },
+        {
+          "type": "format_expr",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "identifier_keyword_operatorname",
+          "named": true
+        },
+        {
+          "type": "identifier_or_keyword",
+          "named": true
+        },
+        {
+          "type": "literal_or_number",
+          "named": true
+        },
+        {
+          "type": "operator_name_ident",
+          "named": true
+        },
+        {
+          "type": "optional_expr_list",
+          "named": true
+        },
+        {
+          "type": "sizeof_expr",
+          "named": true
+        },
+        {
+          "type": "template_type_params",
+          "named": true
+        },
+        {
+          "type": "tkAmpersend",
+          "named": true
+        },
+        {
+          "type": "tkDeref",
+          "named": true
+        },
+        {
+          "type": "tkInherited",
+          "named": true
+        },
+        {
+          "type": "tkPoint",
+          "named": true
+        },
+        {
+          "type": "tkQuestionSquareOpen",
+          "named": true
+        },
+        {
+          "type": "tkRoundClose",
+          "named": true
+        },
+        {
+          "type": "tkRoundOpen",
+          "named": true
+        },
+        {
+          "type": "tkSquareClose",
+          "named": true
+        },
+        {
+          "type": "tkSquareOpen",
+          "named": true
+        },
+        {
+          "type": "tkVertParen",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "typeof_expr",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "variable_or_literal_or_number",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "*=",
-    "named": false
+    "type": "variable_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkComma",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "variable_list",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "+",
-    "named": false
+    "type": "variable_or_literal_or_number",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "literal_or_number",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "+=",
-    "named": false
+    "type": "visibility_specifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tkInternal",
+          "named": true
+        },
+        {
+          "type": "tkPrivate",
+          "named": true
+        },
+        {
+          "type": "tkProtected",
+          "named": true
+        },
+        {
+          "type": "tkPublic",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "-",
-    "named": false
+    "type": "where_part",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ident_list",
+          "named": true
+        },
+        {
+          "type": "tkColon",
+          "named": true
+        },
+        {
+          "type": "tkSemiColon",
+          "named": true
+        },
+        {
+          "type": "tkWhere",
+          "named": true
+        },
+        {
+          "type": "type_ref_and_secific_list",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "-=",
-    "named": false
+    "type": "where_part_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "where_part",
+          "named": true
+        },
+        {
+          "type": "where_part_list",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "/",
-    "named": false
+    "type": "while_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1",
+          "named": true
+        },
+        {
+          "type": "optional_tk_do",
+          "named": true
+        },
+        {
+          "type": "tkWhile",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "/=",
-    "named": false
+    "type": "with_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_list",
+          "named": true
+        },
+        {
+          "type": "tkDo",
+          "named": true
+        },
+        {
+          "type": "tkWith",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": ":=",
-    "named": false
+    "type": "write_property_specifiers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "tkWrite",
+          "named": true
+        },
+        {
+          "type": "unlabelled_stmt",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "<",
-    "named": false
+    "type": "yield_sequence_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1_func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "tkSequence",
+          "named": true
+        },
+        {
+          "type": "tkYield",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "<-",
-    "named": false
+    "type": "yield_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr_l1_func_decl_lambda",
+          "named": true
+        },
+        {
+          "type": "tkYield",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "<=",
-    "named": false
-  },
-  {
-    "type": "<>",
-    "named": false
-  },
-  {
-    "type": "=",
-    "named": false
-  },
-  {
-    "type": ">",
-    "named": false
-  },
-  {
-    "type": ">=",
-    "named": false
-  },
-  {
-    "type": "Program",
-    "named": false
-  },
-  {
-    "type": "^",
-    "named": false
-  },
-  {
-    "type": "and",
-    "named": false
-  },
-  {
-    "type": "begin",
+    "type": "template_empty_param_list",
     "named": true
   },
   {
-    "type": "boolean",
-    "named": false
-  },
-  {
-    "type": "char",
-    "named": false
-  },
-  {
-    "type": "char",
+    "type": "tkAbstract",
     "named": true
   },
   {
-    "type": "colon",
+    "type": "tkAddressOf",
     "named": true
   },
   {
-    "type": "comma",
+    "type": "tkAmpersend",
     "named": true
   },
   {
-    "type": "const",
-    "named": false
-  },
-  {
-    "type": "do",
-    "named": false
-  },
-  {
-    "type": "dot",
+    "type": "tkAnd",
     "named": true
   },
   {
-    "type": "else",
-    "named": false
-  },
-  {
-    "type": "end",
+    "type": "tkArray",
     "named": true
   },
   {
-    "type": "false",
+    "type": "tkArrow",
     "named": true
   },
   {
-    "type": "for",
-    "named": false
-  },
-  {
-    "type": "identifier",
+    "type": "tkAs",
     "named": true
   },
   {
-    "type": "if",
-    "named": false
-  },
-  {
-    "type": "integer",
+    "type": "tkAsciiChar",
     "named": true
   },
   {
-    "type": "integer",
-    "named": false
-  },
-  {
-    "type": "left_paren",
+    "type": "tkAssign",
     "named": true
   },
   {
-    "type": "or",
-    "named": false
-  },
-  {
-    "type": "procedure",
-    "named": false
-  },
-  {
-    "type": "real",
+    "type": "tkAuto",
     "named": true
   },
   {
-    "type": "real",
-    "named": false
-  },
-  {
-    "type": "right_paren",
+    "type": "tkBackSlashRoundOpen",
     "named": true
   },
   {
-    "type": "semicolon",
+    "type": "tkBegin",
     "named": true
   },
   {
-    "type": "step",
-    "named": false
-  },
-  {
-    "type": "then",
-    "named": false
-  },
-  {
-    "type": "to",
-    "named": false
-  },
-  {
-    "type": "true",
+    "type": "tkCase",
     "named": true
   },
   {
-    "type": "var",
+    "type": "tkClass",
     "named": true
   },
   {
-    "type": "while",
-    "named": false
+    "type": "tkColon",
+    "named": true
+  },
+  {
+    "type": "tkComma",
+    "named": true
+  },
+  {
+    "type": "tkConst",
+    "named": true
+  },
+  {
+    "type": "tkConstructor",
+    "named": true
+  },
+  {
+    "type": "tkDefault",
+    "named": true
+  },
+  {
+    "type": "tkDeref",
+    "named": true
+  },
+  {
+    "type": "tkDestructor",
+    "named": true
+  },
+  {
+    "type": "tkDirectiveName",
+    "named": true
+  },
+  {
+    "type": "tkDiv",
+    "named": true
+  },
+  {
+    "type": "tkDivEqual",
+    "named": true
+  },
+  {
+    "type": "tkDo",
+    "named": true
+  },
+  {
+    "type": "tkDotDot",
+    "named": true
+  },
+  {
+    "type": "tkDoubleQuestion",
+    "named": true
+  },
+  {
+    "type": "tkDownto",
+    "named": true
+  },
+  {
+    "type": "tkElse",
+    "named": true
+  },
+  {
+    "type": "tkEnd",
+    "named": true
+  },
+  {
+    "type": "tkEqual",
+    "named": true
+  },
+  {
+    "type": "tkEvent",
+    "named": true
+  },
+  {
+    "type": "tkExcept",
+    "named": true
+  },
+  {
+    "type": "tkExplicit",
+    "named": true
+  },
+  {
+    "type": "tkExtensionMethod",
+    "named": true
+  },
+  {
+    "type": "tkExternal",
+    "named": true
+  },
+  {
+    "type": "tkFile",
+    "named": true
+  },
+  {
+    "type": "tkFinalization",
+    "named": true
+  },
+  {
+    "type": "tkFinally",
+    "named": true
+  },
+  {
+    "type": "tkFloat",
+    "named": true
+  },
+  {
+    "type": "tkFor",
+    "named": true
+  },
+  {
+    "type": "tkForeach",
+    "named": true
+  },
+  {
+    "type": "tkFormatStringLiteral",
+    "named": true
+  },
+  {
+    "type": "tkForward",
+    "named": true
+  },
+  {
+    "type": "tkFunction",
+    "named": true
+  },
+  {
+    "type": "tkGoto",
+    "named": true
+  },
+  {
+    "type": "tkGreater",
+    "named": true
+  },
+  {
+    "type": "tkGreaterEqual",
+    "named": true
+  },
+  {
+    "type": "tkIdentifier",
+    "named": true
+  },
+  {
+    "type": "tkIf",
+    "named": true
+  },
+  {
+    "type": "tkImplementation",
+    "named": true
+  },
+  {
+    "type": "tkImplicit",
+    "named": true
+  },
+  {
+    "type": "tkIn",
+    "named": true
+  },
+  {
+    "type": "tkInherited",
+    "named": true
+  },
+  {
+    "type": "tkInitialization",
+    "named": true
+  },
+  {
+    "type": "tkInteger",
+    "named": true
+  },
+  {
+    "type": "tkInterface",
+    "named": true
+  },
+  {
+    "type": "tkInternal",
+    "named": true
+  },
+  {
+    "type": "tkIs",
+    "named": true
+  },
+  {
+    "type": "tkLabel",
+    "named": true
+  },
+  {
+    "type": "tkLibrary",
+    "named": true
+  },
+  {
+    "type": "tkLock",
+    "named": true
+  },
+  {
+    "type": "tkLoop",
+    "named": true
+  },
+  {
+    "type": "tkLower",
+    "named": true
+  },
+  {
+    "type": "tkLowerEqual",
+    "named": true
+  },
+  {
+    "type": "tkMatch",
+    "named": true
+  },
+  {
+    "type": "tkMinus",
+    "named": true
+  },
+  {
+    "type": "tkMinusEqual",
+    "named": true
+  },
+  {
+    "type": "tkMod",
+    "named": true
+  },
+  {
+    "type": "tkMultEqual",
+    "named": true
+  },
+  {
+    "type": "tkName",
+    "named": true
+  },
+  {
+    "type": "tkNamespace",
+    "named": true
+  },
+  {
+    "type": "tkNew",
+    "named": true
+  },
+  {
+    "type": "tkNil",
+    "named": true
+  },
+  {
+    "type": "tkNot",
+    "named": true
+  },
+  {
+    "type": "tkNotEqual",
+    "named": true
+  },
+  {
+    "type": "tkOf",
+    "named": true
+  },
+  {
+    "type": "tkOn",
+    "named": true
+  },
+  {
+    "type": "tkOperator",
+    "named": true
+  },
+  {
+    "type": "tkOr",
+    "named": true
+  },
+  {
+    "type": "tkOverload",
+    "named": true
+  },
+  {
+    "type": "tkOverride",
+    "named": true
+  },
+  {
+    "type": "tkPacked",
+    "named": true
+  },
+  {
+    "type": "tkParams",
+    "named": true
+  },
+  {
+    "type": "tkPartial",
+    "named": true
+  },
+  {
+    "type": "tkPlus",
+    "named": true
+  },
+  {
+    "type": "tkPlusEqual",
+    "named": true
+  },
+  {
+    "type": "tkPoint",
+    "named": true
+  },
+  {
+    "type": "tkPrivate",
+    "named": true
+  },
+  {
+    "type": "tkProcedure",
+    "named": true
+  },
+  {
+    "type": "tkProgram",
+    "named": true
+  },
+  {
+    "type": "tkProperty",
+    "named": true
+  },
+  {
+    "type": "tkProtected",
+    "named": true
+  },
+  {
+    "type": "tkPublic",
+    "named": true
+  },
+  {
+    "type": "tkQuestion",
+    "named": true
+  },
+  {
+    "type": "tkQuestionPoint",
+    "named": true
+  },
+  {
+    "type": "tkQuestionSquareOpen",
+    "named": true
+  },
+  {
+    "type": "tkRaise",
+    "named": true
+  },
+  {
+    "type": "tkRead",
+    "named": true
+  },
+  {
+    "type": "tkRecord",
+    "named": true
+  },
+  {
+    "type": "tkReintroduce",
+    "named": true
+  },
+  {
+    "type": "tkRepeat",
+    "named": true
+  },
+  {
+    "type": "tkResourceString",
+    "named": true
+  },
+  {
+    "type": "tkRoundClose",
+    "named": true
+  },
+  {
+    "type": "tkRoundOpen",
+    "named": true
+  },
+  {
+    "type": "tkSealed",
+    "named": true
+  },
+  {
+    "type": "tkSemiColon",
+    "named": true
+  },
+  {
+    "type": "tkSequence",
+    "named": true
+  },
+  {
+    "type": "tkSet",
+    "named": true
+  },
+  {
+    "type": "tkShl",
+    "named": true
+  },
+  {
+    "type": "tkShr",
+    "named": true
+  },
+  {
+    "type": "tkSizeOf",
+    "named": true
+  },
+  {
+    "type": "tkSlash",
+    "named": true
+  },
+  {
+    "type": "tkSquareClose",
+    "named": true
+  },
+  {
+    "type": "tkSquareOpen",
+    "named": true
+  },
+  {
+    "type": "tkStar",
+    "named": true
+  },
+  {
+    "type": "tkStarStar",
+    "named": true
+  },
+  {
+    "type": "tkStatic",
+    "named": true
+  },
+  {
+    "type": "tkStringLiteral",
+    "named": true
+  },
+  {
+    "type": "tkTemplate",
+    "named": true
+  },
+  {
+    "type": "tkThen",
+    "named": true
+  },
+  {
+    "type": "tkTo",
+    "named": true
+  },
+  {
+    "type": "tkTry",
+    "named": true
+  },
+  {
+    "type": "tkType",
+    "named": true
+  },
+  {
+    "type": "tkTypeOf",
+    "named": true
+  },
+  {
+    "type": "tkUnderscore",
+    "named": true
+  },
+  {
+    "type": "tkUnit",
+    "named": true
+  },
+  {
+    "type": "tkUntil",
+    "named": true
+  },
+  {
+    "type": "tkUses",
+    "named": true
+  },
+  {
+    "type": "tkVar",
+    "named": true
+  },
+  {
+    "type": "tkVertParen",
+    "named": true
+  },
+  {
+    "type": "tkVirtual",
+    "named": true
+  },
+  {
+    "type": "tkWhen",
+    "named": true
+  },
+  {
+    "type": "tkWhere",
+    "named": true
+  },
+  {
+    "type": "tkWhile",
+    "named": true
+  },
+  {
+    "type": "tkWith",
+    "named": true
+  },
+  {
+    "type": "tkWrite",
+    "named": true
+  },
+  {
+    "type": "tkXor",
+    "named": true
+  },
+  {
+    "type": "tkYield",
+    "named": true
   }
 ]
