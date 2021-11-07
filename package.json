@@ -14,10 +14,11 @@
   "author": "Oxana Kostikova",
   "license": "MIT",
   "dependencies": {
-    "nan": "^2.14.1"
+    "nan": "^2.14.1",
+    "tree-sitter": "^0.20.0"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.17.1"
+    "tree-sitter-cli": "^0.20.0"
   },
   "repository": "https://github.com/Lereena/tree-sitter-pascalabcnet",
   "tree-sitter": [

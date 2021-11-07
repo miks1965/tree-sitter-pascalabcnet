@@ -9354,6 +9354,10 @@
     }
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "template_empty_param_list",
     "named": true
   },

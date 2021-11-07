@@ -25,6 +25,12 @@ module.exports = grammar({
         [$.expr_with_func_decl_lambda, $.variable]
     ],
 
+    extras: $ => [
+        $.comment,
+        /\s/,
+        /\\\r?\n/
+    ],
+
     rules: {
         parse_goal: $ => choice(
             $.program_file,
@@ -3243,6 +3249,20 @@ module.exports = grammar({
             $.assignment,
             $.common_lambda_body,
         ),
+
+        comment: $ => token(choice(
+            seq('//', /.*/),
+            seq(
+                '{',
+                /([^/*][^*]*)*/,
+                '}',
+            ),
+            seq(
+                '(*',
+                /[^*]*\*+([^/*][^*]*\*+)*/,
+                ')'
+              )
+        )),
 
         tkVertParen: $ => "|",
         tkAmpersend: $ => "&",
