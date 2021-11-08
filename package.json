@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-pascalabcnet",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "PascalABC.NET grammar for tree-sitter",
   "main": "bindings/node",
   "keywords": [
